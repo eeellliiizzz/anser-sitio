@@ -355,6 +355,47 @@
       "descripcion": "Identidad, redes sociales, merchandising y web con tienda online para un estudio boutique de pilates."
     },
     {
+      "slug": "hesperia",
+      "titulo": "Hesperia",
+      "tipo": "Diseño web, SEO y GEO",
+      "lugar": "Sur de Florida",
+      "anio": "2026",
+      "via": "",
+      "areas": [
+        "Web"
+      ],
+      "descripcion": "Web para un estudio de diseño y construcción que renueva casas en el sur de Florida con estilo mediterráneo, preparada para posicionar en buscadores y en las respuestas de los asistentes de IA.",
+      "entregables": [
+        "Diseño web",
+        "Desarrollo",
+        "SEO",
+        "GEO (posicionamiento en asistentes de IA)"
+      ],
+      "portada": "hesperia-portada.webp",
+      "imagenes": [
+        {
+          "src": "hesperia-1.webp",
+          "pie": "Portada.",
+          "ancha": true
+        },
+        {
+          "src": "hesperia-2.webp",
+          "pie": "Presentación del estudio.",
+          "ancha": true
+        },
+        {
+          "src": "hesperia-3.webp",
+          "pie": "Proceso de trabajo.",
+          "ancha": true
+        },
+        {
+          "src": "hesperia-4.webp",
+          "pie": "Pie de página.",
+          "ancha": true
+        }
+      ]
+    },
+    {
       "slug": "chat-clinicas",
       "titulo": "Citas y reseñas para clínicas",
       "tipo": "Asistente con IA",

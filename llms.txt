@@ -25,6 +25,7 @@ Base en Madrid. Proyectos en toda España. Clientes: agencias de eventos y consu
 - **Eventos al aire libre** — Eventos · Madrid. Propuestas para exterior que tratan la luz, el clima y el flujo de personas como variables vivas: estructuras ligeras, materiales honestos e iluminación que acompaña el ritmo del día. Clientes varios.
 - **Eventos varios** — Eventos y escenografía · Madrid. Escenografías, activaciones y eventos de distinta escala. Arquitectura efímera, iluminación y gráfica trabajan juntas para que el espacio acompañe sin robar protagonismo. Clientes varios.
 - **Merchandising Beach House Ibiza** — Gráfica y merchandising de evento · Ibiza · 2026. Colección de merchandising para Beach House Ibiza: los doce signos del zodiaco dibujados como cartas celestes, en una serie de láminas y aplicados a camiseta, tote bag y pañuelo.
+- **Hesperia** — Diseño web, SEO y GEO · Sur de Florida · 2026. Web para un estudio de diseño y construcción que renueva casas en el sur de Florida con estilo mediterráneo, preparada para posicionar en buscadores y en las respuestas de los asistentes de IA.
 - **Citas y reseñas para clínicas** — Asistente con IA. Un asistente por chat que reserva citas sobre la agenda real de la clínica y, tras la visita, recoge la opinión del paciente.
 
 ## Para agencias
