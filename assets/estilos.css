@@ -201,6 +201,10 @@ article.pieza h3 { font-size: inherit; }
 .ficha__imgs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: clamp(.6rem, 1.2vw, 1rem); }
 .ficha__imgs .ancha { grid-column: 1 / -1; }
 .ficha__imgs figure { margin: 0; }
+/* Web navegable dentro de la ficha */
+.ficha__web { border: 1px solid var(--raya); background: #fff; }
+.ficha__web-barra { display: flex; justify-content: space-between; gap: 1rem; padding: .55rem .8rem; color: var(--tenue); border-bottom: 1px solid var(--raya); background: var(--papel); }
+.ficha__web iframe { display: block; width: 100%; height: min(78vh, 860px); border: 0; }
 .ficha__anim { display: block; width: 100%; aspect-ratio: 16 / 10; border: 0; background: var(--tinta); }
 .ficha__imgs figcaption { padding: .5rem 0 .6rem; max-width: 62ch; font-size: .9rem; color: var(--tenue); }
 .ficha__txt .ficha__resumen { font-size: clamp(1.2rem, 1.7vw, 1.5rem); font-weight: 500; letter-spacing: -.025em; line-height: 1.15; }

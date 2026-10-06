@@ -150,7 +150,7 @@ async function buscaImagenes(p) {
   if (p.imagenes?.length) {
     return p.imagenes.map((f) => (typeof f === 'string'
       ? { src: CONFIG.dirImagenes + f }
-      : { ...f, src: CONFIG.dirImagenes + f.src }));
+      : { ...f, src: /^(\/|borradores\/)/.test(f.src) ? f.src : CONFIG.dirImagenes + f.src }));
   }
   const encontradas = [];
   for (let n = 1; n <= CONFIG.maxImagenes; n++) {
@@ -169,6 +169,15 @@ const esVideo = (src) => /\.(mp4|webm)$/i.test(src);
 
 const esAnimacion = (src) => /\.html(\?|$)/i.test(src);
 
+// Web navegable: la página real dentro de un marco de navegador, con su propio scroll
+function webViva(i, alt) {
+  const marco = crea('div', { class: 'ficha__web ancha' }, [
+    crea('div', { class: 'ficha__web-barra mono' }, [crea('span', { text: i.url || '' }), crea('span', { text: 'Web navegable' })]),
+    crea('iframe', { src: i.src, title: alt, loading: 'lazy' }),
+  ]);
+  return marco;
+}
+
 function medio(src, alt, perezoso) {
   // Pieza animada: una página propia dentro de un marco 16:10
   if (esAnimacion(src)) return crea('iframe', { src, title: alt, class: 'ficha__anim ancha', loading: 'lazy' });
@@ -185,13 +194,13 @@ function apaisada(img) {
 
 // Imagen o vídeo de la ficha, con pie de foto si lo lleva
 function pieza(i, alt, perezoso) {
-  const m = medio(i.src, alt, perezoso);
+  const m = i.web ? webViva(i, alt) : medio(i.src, alt, perezoso);
   // "ancha": true en el JSON fuerza el ancho completo (láminas verticales largas)
   if (i.ancha) m.addEventListener('load', () => m.classList.add('ancha'));
   if (i.aspecto) m.style.aspectRatio = i.aspecto;
   if (!i.pie) return m;
   const fig = crea('figure', {}, [m, crea('figcaption', { text: i.pie })]);
-  if (esAnimacion(i.src) || i.ancha) fig.classList.add('ancha');
+  if (esAnimacion(i.src) || i.ancha || i.web) fig.classList.add('ancha');
   else m.addEventListener('load', () => fig.classList.toggle('ancha', m.naturalWidth >= m.naturalHeight));
   return fig;
 }
