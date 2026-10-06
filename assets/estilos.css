@@ -72,6 +72,8 @@ article.pieza h3 { font-size: inherit; }
 .nav { display: flex; gap: clamp(1rem, 2.2vw, 2rem); font-size: .95rem; }
 .nav a { background: linear-gradient(currentColor, currentColor) no-repeat 0 100% / 0 1px; transition: background-size .35s var(--curva); padding-block: .2rem; }
 .nav a:hover { background-size: 100% 1px; }
+.nav .idioma { font-family: var(--f-mono); font-size: .75rem; letter-spacing: .04em; border: 1px solid var(--raya); border-radius: 99px; padding: .25rem .65rem; background: none; transition: background .3s, color .3s, border-color .3s; }
+.nav .idioma:hover { background: var(--tinta); border-color: var(--tinta); color: var(--papel); }
 .menu { display: none; }
 
 /* ---------- Hero ---------- */

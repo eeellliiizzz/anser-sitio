@@ -24,6 +24,35 @@ const CONFIG = {
   maxImagenes: 12,
 };
 
+// Idioma: lo marca el atributo lang de la página (index.html = es, en/index.html = en).
+// Los textos de la página en inglés los escribe herramientas/genera.py; aquí van los que pinta el script.
+const EN = document.documentElement.lang === 'en';
+const T = EN ? {
+  menu: 'Menu', cerrar: 'Close', todos: 'All', tipo: 'Type', cliente: 'Client', lugar: 'Location', anio: 'Year', via: 'Via',
+  viaPref: 'via ', hecho: 'What we did', pendImg: '[PENDING] Images', pendProy: '[PENDING] Project images',
+  webNav: 'Live website', piezaAlt: 'piece', nda: 'Confidential case', clienteMeta: (c) => `${c} client`,
+  errServ: 'Services could not be loaded.', errProy: 'Projects could not be loaded.',
+  preguntas: [
+    'Who designs the brand and the stand too?',
+    'Can we see the space before it gets built?',
+    'Can you hand over the model ready for 3D printing?',
+    'Who builds our website and runs our social media?',
+    'Who edits the videos from our event?',
+    'And an AI assistant to look after our customers?',
+  ],
+} : {
+  menu: 'Menú', cerrar: 'Cerrar', todos: 'Todos', tipo: 'Tipo', cliente: 'Cliente', lugar: 'Lugar', anio: 'Año', via: 'Vía',
+  viaPref: 'vía ', hecho: 'Qué hicimos', pendImg: '[PENDIENTE] Imágenes', pendProy: '[PENDIENTE] Imágenes del proyecto',
+  webNav: 'Web navegable', piezaAlt: 'pieza', nda: 'Caso confidencial', clienteMeta: (c) => `Cliente ${c.toLowerCase()}`,
+  errServ: 'No se han podido cargar los servicios.',
+  errProy: 'No se han podido cargar los proyectos. Abre la web desde un servidor (no con doble clic sobre el archivo).',
+  preguntas: CONFIG.preguntas,
+};
+
+// Traducciones del contenido (content/en.json): clave = texto en español
+let textosEn = {};
+const tr = (x) => (Array.isArray(x) ? x.map(tr) : (EN && typeof x === 'string' && textosEn[x]) || x);
+
 const $ = (sel, raiz = document) => raiz.querySelector(sel);
 const $$ = (sel, raiz = document) => [...raiz.querySelectorAll(sel)];
 
@@ -42,6 +71,21 @@ async function carga(ruta) {
   const res = await fetch(ruta, { cache: 'no-cache' });
   if (!res.ok) throw new Error(`${ruta}: ${res.status}`);
   return res.json();
+}
+
+const traducciones = EN
+  ? carga('content/en.json').then((d) => { textosEn = d.textos || {}; }).catch((err) => console.error(err))
+  : Promise.resolve();
+
+// Devuelve el proyecto con sus textos en el idioma de la página
+function traduce(p) {
+  if (!EN) return p;
+  const q = { ...p };
+  for (const k of ['titulo', 'tipo', 'lugar', 'cliente', 'descripcion', 'resumen', 'detalle', 'entregables', 'areas']) {
+    if (q[k]) q[k] = tr(q[k]);
+  }
+  q.imagenes = (p.imagenes || []).map((i) => (typeof i === 'object' && i.pie ? { ...i, pie: tr(i.pie) } : i));
+  return q;
 }
 
 /* ---------- Marca y contacto ---------- */
@@ -85,12 +129,12 @@ function menu() {
   const cierra = () => {
     document.documentElement.classList.remove('nav-abierto');
     boton.setAttribute('aria-expanded', 'false');
-    boton.textContent = 'Menú';
+    boton.textContent = T.menu;
   };
   boton.addEventListener('click', () => {
     const abierto = document.documentElement.classList.toggle('nav-abierto');
     boton.setAttribute('aria-expanded', String(abierto));
-    boton.textContent = abierto ? 'Cerrar' : 'Menú';
+    boton.textContent = abierto ? T.cerrar : T.menu;
   });
   $$('#nav a').forEach((a) => a.addEventListener('click', cierra));
   addEventListener('keydown', (e) => { if (e.key === 'Escape') cierra(); });
@@ -100,13 +144,13 @@ function menu() {
 
 function preguntas() {
   const el = $('#pregunta');
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches || CONFIG.preguntas.length < 2) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || T.preguntas.length < 2) return;
   let i = 0;
   setInterval(() => {
     el.classList.add('sale');
     setTimeout(() => {
-      i = (i + 1) % CONFIG.preguntas.length;
-      el.textContent = CONFIG.preguntas[i];
+      i = (i + 1) % T.preguntas.length;
+      el.textContent = T.preguntas[i];
       el.classList.remove('sale');
     }, 450);
   }, 3600);
@@ -117,18 +161,18 @@ function preguntas() {
 async function servicios() {
   const lista = $('#servicios-lista');
   try {
-    const { servicios: areas } = await carga('content/servicios.json');
+    const [{ servicios: areas }] = await Promise.all([carga('content/servicios.json'), traducciones]);
     lista.replaceChildren(...areas.map((s, i) => crea('li', { class: 'servicio' }, [
       crea('span', { class: 'mono servicio__num', text: String(i + 1).padStart(2, '0') }),
-      crea('h3', { text: s.titulo }),
+      crea('h3', { text: tr(s.titulo) }),
       crea('div', { class: 'servicio__txt' }, [
-        crea('p', { text: s.frase }),
-        crea('ul', { class: 'mono' }, (s.capacidades || []).map((c) => crea('li', { text: c }))),
+        crea('p', { text: tr(s.frase) }),
+        crea('ul', { class: 'mono' }, tr(s.capacidades || []).map((c) => crea('li', { text: c }))),
       ]),
     ])));
   } catch (err) {
     console.error(err);
-    lista.replaceChildren(crea('li', { class: 'aviso mono', text: 'No se han podido cargar los servicios.' }));
+    lista.replaceChildren(crea('li', { class: 'aviso mono', text: T.errServ }));
   }
 }
 
@@ -172,7 +216,7 @@ const esAnimacion = (src) => /\.html(\?|$)/i.test(src);
 // Web navegable: la página real dentro de un marco de navegador, con su propio scroll
 function webViva(i, alt) {
   const marco = crea('div', { class: 'ficha__web ancha' }, [
-    crea('div', { class: 'ficha__web-barra mono' }, [crea('span', { text: i.url || '' }), crea('span', { text: 'Web navegable' })]),
+    crea('div', { class: 'ficha__web-barra mono' }, [crea('span', { text: i.url || '' }), crea('span', { text: T.webNav })]),
     crea('iframe', { src: i.src, title: alt, loading: 'lazy' }),
   ]);
   return marco;
@@ -205,20 +249,20 @@ function pieza(i, alt, perezoso) {
   return fig;
 }
 
-const meta = (p) => [p.tipo, p.cliente && `Cliente ${p.cliente.toLowerCase()}`, p.lugar, p.anio].filter(Boolean).join(' · ');
-const etiquetaNda = (p) => crea('span', { class: 'nda mono', text: p.via || 'Caso confidencial' });
+const meta = (p) => [p.tipo, p.cliente && T.clienteMeta(p.cliente), p.lugar, p.anio].filter(Boolean).join(' · ');
+const etiquetaNda = (p) => crea('span', { class: 'nda mono', text: p.via || T.nda });
 
 function pintaPieza(p) {
   // Caso bajo NDA: sin imágenes; la pieza es tipográfica y lleva la etiqueta destacada
   const marco = p.nda
     ? crea('span', { class: 'pieza__img pieza__img--nda' }, [etiquetaNda(p), crea('span', { class: 'pieza__lema', text: p.resumen || p.tipo })])
-    : crea('span', { class: 'pieza__img' }, [crea('span', { class: 'mono', text: '[PENDIENTE] Imágenes' })]);
+    : crea('span', { class: 'pieza__img' }, [crea('span', { class: 'mono', text: T.pendImg })]);
   const boton = crea('button', { class: 'pieza', type: 'button' }, [
     marco,
     crea('span', { class: 'pieza__pie' }, [
       crea('span', { class: 'pieza__titulo', text: p.titulo }),
       crea('span', { class: 'mono pieza__meta', text: meta(p) }),
-      ...(p.via && !p.nda ? [crea('span', { class: 'mono pieza__meta', text: `vía ${p.via}` })] : []),
+      ...(p.via && !p.nda ? [crea('span', { class: 'mono pieza__meta', text: T.viaPref + p.via })] : []),
     ]),
   ]);
   boton.addEventListener('click', () => abreFicha(estado.visibles.indexOf(p)));
@@ -233,7 +277,7 @@ function pintaPieza(p) {
 }
 
 function filtra(area) {
-  estado.visibles = estado.todos.filter((p) => area === 'Todos' || (p.areas || []).includes(area));
+  estado.visibles = estado.todos.filter((p) => area === T.todos || (p.areas || []).includes(area));
   estado.todos.forEach((p) => { p.el.hidden = !estado.visibles.includes(p); });
   $$('#filtros button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.area === area)));
 }
@@ -241,8 +285,8 @@ function filtra(area) {
 function pintaFiltros() {
   const areas = [...new Set(estado.todos.flatMap((p) => p.areas || []))];
   if (areas.length < 2) return;
-  $('#filtros').replaceChildren(...['Todos', ...areas].map((a) => {
-    const n = a === 'Todos' ? estado.todos.length : estado.todos.filter((p) => (p.areas || []).includes(a)).length;
+  $('#filtros').replaceChildren(...[T.todos, ...areas].map((a) => {
+    const n = a === T.todos ? estado.todos.length : estado.todos.filter((p) => (p.areas || []).includes(a)).length;
     const b = crea('button', { type: 'button', 'data-area': a, 'aria-pressed': 'false' }, [a, crea('sup', { class: 'mono', text: String(n) })]);
     b.addEventListener('click', () => filtra(a));
     return b;
@@ -256,7 +300,7 @@ async function abreFicha(i) {
   const p = estado.visibles[estado.actual];
   const imgs = await p.listas;
 
-  const datos = [['Tipo', p.tipo], ['Cliente', p.cliente], ['Lugar', p.lugar], ['Año', p.anio], ['Vía', !p.nda && p.via]].filter(([, v]) => v);
+  const datos = [[T.tipo, p.tipo], [T.cliente, p.cliente], [T.lugar, p.lugar], [T.anio, p.anio], [T.via, !p.nda && p.via]].filter(([, v]) => v);
   $('#ficha-pos').textContent = `${String(estado.actual + 1).padStart(2, '0')} / ${String(n).padStart(2, '0')}`;
   $('#ficha-cuerpo').replaceChildren(
     crea('div', { class: 'ficha__txt' }, [
@@ -266,13 +310,13 @@ async function abreFicha(i) {
       ...[p.descripcion, p.detalle].flat().filter(Boolean).map((t) => crea('p', { text: t })),
       crea('dl', { class: 'mono' }, datos.flatMap(([k, v]) => [crea('dt', { text: k }), crea('dd', { text: v })])),
       ...(p.entregables?.length ? [crea('div', { class: 'ficha__hecho mono' }, [
-        crea('p', { text: 'Qué hicimos' }),
+        crea('p', { text: T.hecho }),
         crea('ul', {}, p.entregables.map((e) => crea('li', { text: e }))),
       ])] : []),
     ]),
     ...(p.nda ? [] : [crea('div', { class: `ficha__imgs ${p.formato === 'vertical' ? 'ficha__imgs--vertical' : ''}` }, imgs.length
-      ? imgs.map((i, k) => pieza(i, i.pie || `${p.titulo} — pieza ${k + 1}`, k > 0))
-      : [crea('p', { class: 'pendiente mono', text: '[PENDIENTE] Imágenes del proyecto' })])]),
+      ? imgs.map((i, k) => pieza(i, i.pie || `${p.titulo} — ${T.piezaAlt} ${k + 1}`, k > 0))
+      : [crea('p', { class: 'pendiente mono', text: T.pendProy })])]),
   );
   $('#ficha-cuerpo').classList.toggle('ficha__cuerpo--nda', Boolean(p.nda));
   if (!ficha.open) ficha.showModal();
@@ -296,12 +340,12 @@ function iniciaFicha() {
 async function proyectos() {
   const galeria = $('#galeria');
   try {
-    const { proyectos: todos } = await carga('content/proyectos.json');
-    const lista = todos.filter((p) => !p.oculto);
+    const [{ proyectos: todos }] = await Promise.all([carga('content/proyectos.json'), traducciones]);
+    const lista = todos.filter((p) => !p.oculto).map(traduce);
     estado.todos = lista;
     galeria.replaceChildren(...lista.map(pintaPieza));
     pintaFiltros();
-    filtra('Todos');
+    filtra(T.todos);
     // Para enlazar un proyecto concreto: index.html#p=slug
     const slug = new URLSearchParams(location.hash.slice(1)).get('p');
     const i = lista.findIndex((p) => p.slug === slug);
@@ -310,7 +354,7 @@ async function proyectos() {
     console.error(err);
     galeria.replaceChildren(crea('li', {
       class: 'aviso mono',
-      text: 'No se han podido cargar los proyectos. Abre la web desde un servidor (no con doble clic sobre el archivo).',
+      text: T.errProy,
     }));
   }
 }
