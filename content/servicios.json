@@ -1,0 +1,64 @@
+{
+  "_nota": "Fuente única de servicios. Para añadir un área, copia un bloque y cambia los textos: la web la pinta y la numera sola. El orden de la lista es el orden en la web.",
+  "servicios": [
+    {
+      "titulo": "Marca, diseño gráfico y web",
+      "frase": "Identidades que se reconocen, piezas que se entienden a la primera y páginas web que funcionan.",
+      "capacidades": [
+        "Branding",
+        "Identidad visual",
+        "Diseño gráfico",
+        "Páginas web",
+        "Packaging",
+        "Gráfica de evento"
+      ]
+    },
+    {
+      "titulo": "Espacios y eventos",
+      "frase": "Diseñamos el espacio y lo enseñamos en 3D antes de que se construya.",
+      "capacidades": [
+        "Diseño de espacios",
+        "Stands",
+        "Intervenciones de marca",
+        "Arquitectura efímera",
+        "Renders 3D"
+      ]
+    },
+    {
+      "titulo": "3D e impresión",
+      "frase": "Del render al objeto: modelos revisados y listos para imprimir.",
+      "capacidades": [
+        "Modelado 3D",
+        "Renders",
+        "Preparación de modelos para impresión 3D"
+      ]
+    },
+    {
+      "titulo": "Edición de vídeo",
+      "frase": "Montamos el material para que se vea entero, en redes o en pantalla grande.",
+      "capacidades": [
+        "Edición",
+        "Montaje",
+        "Vídeo para redes sociales"
+      ]
+    },
+    {
+      "titulo": "Marketing y contenido",
+      "frase": "Estrategia y contenido para que la marca tenga algo que decir cada semana.",
+      "capacidades": [
+        "Estrategia de marca",
+        "Marketing",
+        "Contenido para redes sociales"
+      ]
+    },
+    {
+      "titulo": "Agentes y chats con IA",
+      "frase": "Asistentes que responden a vuestros clientes con la voz de la marca.",
+      "capacidades": [
+        "Agentes de IA",
+        "Chatbots",
+        "Diseño de conversación"
+      ]
+    }
+  ]
+}

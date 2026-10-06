@@ -1,0 +1,13 @@
+Imágenes de proyectos
+=====================
+
+Cada proyecto de content/proyectos.json puede indicar sus archivos:
+
+    "portada":  "naturgy-portada.webp"                (miniatura de la galería)
+    "imagenes": ["naturgy-1.webp", "naturgy-2.webp"]  (las del popup, en orden)
+
+Si "imagenes" está vacío, la web busca sola <slug>-1.jpg, <slug>-2.jpg ...
+(numeración seguida desde 1; extensiones .jpg .webp .png .jpeg; máximo 12).
+Si no hay "portada", se usa la primera imagen.
+
+Recomendado: 2000 px de lado largo, WebP o JPG, menos de 500 KB.

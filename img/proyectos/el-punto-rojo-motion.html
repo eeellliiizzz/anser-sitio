@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El Punto Rojo — logo en movimiento</title>
+<link rel="stylesheet" href="/assets/fuentes/archivo.css">
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #0B0A0A; }
+  #escena { container-type: inline-size; position: absolute; inset: 0; overflow: hidden; font-family: 'Archivo', sans-serif; font-weight: 900; }
+  #capa { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+  .punto { display: inline-block; width: .52em; height: .52em; border-radius: 50%; margin-left: .06em; }
+  .filas { position: absolute; inset: -2cqw 0; display: flex; flex-direction: column; justify-content: space-between; }
+  .filas div { white-space: nowrap; font-size: 11cqw; letter-spacing: -.045em; line-height: 1; }
+  .filas span.rep { margin-right: .35em; }
+</style>
+</head>
+<body>
+<div id="escena"><div id="capa"></div></div>
+<script>
+// Bucle de 4 compases: un corte seco cada medio golpe, como las visuales de un VJ.
+const BPM = 124;
+const R = '#E8261B', N = '#0B0A0A', C = '#EFE9DF';
+const SEQ = ['logo','logo','el','punto','rojo','punto0','flash','punto1','rojoL','rojoL','filas','filas','filas','filas','flash','puntoI','elR','punto','rojoR','punto0','puntoB','flash','logo','logo','filas','filas','rojoL','flash','punto0','flash','puntoB','logo'];
+const PALABRAS = { el: ['el', N], elR: ['el', R], punto: ['punto', R], rojo: ['rojo', N], rojoR: ['rojo', R] };
+const TAM = { el: '52cqw', punto: '34cqw', rojo: '40cqw' };
+const escena = document.getElementById('escena');
+const capa = document.getElementById('capa');
+const logo = (dot) => `el punto rojo<span class="punto" style="background:${dot}"></span>`;
+
+function pinta(paso) {
+  const S = paso % SEQ.length;
+  const k = SEQ[S];
+  const palabra = PALABRAS[k];
+  escena.style.background = k === 'flash' ? '#FFFFFF' : (k === 'rojoL' || k === 'puntoI') ? R : palabra ? palabra[1] : N;
+  capa.style.transform = S % 2 === 0 ? 'scale(1.04)' : 'scale(1)';
+
+  if (k === 'logo' || k === 'rojoL') {
+    const estrecho = k === 'rojoL';
+    capa.innerHTML = `<span style="font-stretch:${estrecho ? '62%' : '125%'};font-size:${estrecho ? '17cqw' : '10cqw'};letter-spacing:-.045em;line-height:1;white-space:nowrap;color:${estrecho ? N : C}">${logo(estrecho ? N : R)}</span>`;
+  } else if (palabra) {
+    capa.innerHTML = `<span style="font-stretch:62%;font-size:${TAM[palabra[0]]};letter-spacing:-.05em;line-height:.8;white-space:nowrap;color:${palabra[1] === R ? N : C}">${palabra[0]}</span>`;
+  } else if (k.startsWith('punto')) {
+    const lado = k === 'puntoB' ? '58cqw' : k === 'punto1' ? '14cqw' : '30cqw';
+    capa.innerHTML = `<div style="width:${lado};height:${lado};border-radius:50%;background:${k === 'puntoI' ? N : R};flex:none"></div>`;
+  } else if (k === 'filas') {
+    capa.innerHTML = '<div class="filas">' + [0, 1, 2, 3, 4].map((i) => {
+      const sentido = i % 2 ? 1 : -1;
+      const x = (((S * 9 * sentido) % 60) + 60) % 60 - 60;
+      const rep = `<span class="rep">${logo(R)}</span>`.repeat(4);
+      return `<div style="font-stretch:${i % 2 ? '62%' : '125%'};color:${i === 2 ? R : C};transform:translateX(${x}cqw)">${rep}</div>`;
+    }).join('') + '</div>';
+  } else {
+    capa.innerHTML = '';
+  }
+}
+
+let paso = 0;
+pinta(paso);
+// Con «reducir movimiento» activado se queda en el logo fijo (también evita los destellos)
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  setInterval(() => pinta(++paso), 30000 / BPM);
+}
+</script>
+</body>
+</html>

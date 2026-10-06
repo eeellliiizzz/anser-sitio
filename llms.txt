@@ -1,0 +1,40 @@
+# Anser
+
+> Anser es una agencia creativa con base en Madrid y proyectos en toda España. Un solo proveedor para todo el proyecto: marca, diseño gráfico y web, espacios y eventos, 3D e impresión, edición de vídeo, marketing y contenido, y agentes y chats con IA.
+
+Base en Madrid. Proyectos en toda España. Clientes: agencias de eventos y consultoras de marca (como producción creativa externa) y marcas directas.
+
+## Servicios
+
+- **Marca, diseño gráfico y web**: Identidades que se reconocen, piezas que se entienden a la primera y páginas web que funcionan. (Branding, Identidad visual, Diseño gráfico, Páginas web, Packaging, Gráfica de evento)
+- **Espacios y eventos**: Diseñamos el espacio y lo enseñamos en 3D antes de que se construya. (Diseño de espacios, Stands, Intervenciones de marca, Arquitectura efímera, Renders 3D)
+- **3D e impresión**: Del render al objeto: modelos revisados y listos para imprimir. (Modelado 3D, Renders, Preparación de modelos para impresión 3D)
+- **Edición de vídeo**: Montamos el material para que se vea entero, en redes o en pantalla grande. (Edición, Montaje, Vídeo para redes sociales)
+- **Marketing y contenido**: Estrategia y contenido para que la marca tenga algo que decir cada semana. (Estrategia de marca, Marketing, Contenido para redes sociales)
+- **Agentes y chats con IA**: Asistentes que responden a vuestros clientes con la voz de la marca. (Agentes de IA, Chatbots, Diseño de conversación)
+
+## Proyectos
+
+- **Naturgy** — Evento corporativo · Valencia · 2026. Diseño del evento corporativo celebrado en Valencia para reconocer a entidades e iniciativas de energía e impacto social por su contribución a la zona tras la DANA.
+- **Sunglass Hut Summer Event** — Evento de marca · Barcelona · 2026. Evento en Barcelona para presentar las nuevas colecciones a creadores de contenido: un espacio de marca pensado para descubrir el producto, relacionarse y grabar.
+- **The Ordinary** — Activación de marca · 2026. Una de las primeras grandes activaciones de la marca en España. Llevamos su estética de laboratorio al espacio: clínico, mínimo y completamente blanco, del diseño general al último detalle.
+- **Patrón Tequila** — Intervención de marca · Madrid · vía Mälmo BTL (Bacardí). Intervenciones de marca en clubs nocturnos: elementos luminosos, materiales prémium y detalles arquitectónicos que se integran sin invadir la identidad del local.
+- **Grey Goose** — Intervención de marca · Madrid · vía Mälmo BTL (Bacardí). Serie de intervenciones en clubs nocturnos que llevan la estética limpia y sofisticada de la marca al espacio: presencia elegante y discreta, sin alterar la atmósfera del local.
+- **Logiplay 2025 y Rioja 100 Aniversario** — Eventos · Madrid · 2025 · vía Equipo Singular. Dos eventos en las salas del Cine Callao y dos atmósferas opuestas: un lenguaje tecnológico y dinámico para Logiplay 2025 y un escenario cálido y sofisticado para el centenario de Rioja.
+- **Stands y ferias** — Arquitectura efímera · Madrid. Stands de líneas limpias e iluminación precisa, pensados para atraer en segundos en entornos saturados y dejar que la marca se lea rápido. Clientes varios.
+- **Eventos al aire libre** — Eventos · Madrid. Propuestas para exterior que tratan la luz, el clima y el flujo de personas como variables vivas: estructuras ligeras, materiales honestos e iluminación que acompaña el ritmo del día. Clientes varios.
+- **Eventos varios** — Eventos y escenografía · Madrid. Escenografías, activaciones y eventos de distinta escala. Arquitectura efímera, iluminación y gráfica trabajan juntas para que el espacio acompañe sin robar protagonismo. Clientes varios.
+- **Merchandising Beach House Ibiza** — Gráfica y merchandising de evento · Ibiza · 2026. Colección de merchandising para Beach House Ibiza: los doce signos del zodiaco dibujados como cartas celestes, en una serie de láminas y aplicados a camiseta, tote bag y pañuelo.
+- **Citas y reseñas para clínicas** — Asistente con IA. Un asistente por chat que reserva citas sobre la agenda real de la clínica y, tras la visita, recoge la opinión del paciente.
+
+## Para agencias
+
+- Un proveedor para gráfica y espacio: un solo interlocutor y una sola línea creativa.
+- El render vende la idea antes de producirla: representación 3D para aprobar el espacio antes de fabricar.
+- Producción en toda España, con base en Madrid.
+
+## Contacto
+
+- WhatsApp: +34747441171 (https://wa.me/34747441171)
+- Email: info@anser.studio
+- Web: https://anser.studio/

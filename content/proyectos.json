@@ -1,0 +1,426 @@
+{
+  "_nota": "Fuente única de proyectos. Solo datos verificados: no añadir clientes, cifras ni fechas sin confirmar. Campos vacíos = dato no confirmado. 'areas' alimenta el filtro. 'portada' e 'imagenes' son nombres de archivo dentro de img/proyectos/; si 'imagenes' está vacío, la web busca <slug>-1.jpg, <slug>-2.jpg, etc. Opcionales: 'entregables' (lista «Qué hicimos»), 'formato': 'vertical' (reels y stories en tres columnas). 'imagenes' admite también .mp4. 'cliente': 'Confidencial' para trabajos de marketing e IA (nunca el nombre real). 'tipo': 'Caso tipo' = ejemplo ilustrativo, no un encargo real. 'nda': true = caso confidencial: etiqueta destacada, sin galería ni imágenes; lleva 'resumen' (visible en la tarjeta) y 'detalle' (al abrirla) en lugar de 'descripcion'. 'resumen' (frase destacada) y 'detalle' (texto o lista de párrafos) son opcionales en cualquier proyecto. Un .html en 'imagenes' es una pieza animada y se muestra viva dentro de un marco 16:10. En un elemento de 'imagenes', \"ancha\": true fuerza el ancho completo aunque la imagen sea vertical. Los proyectos sin material o a la espera no van aquí: están en borradores/proyectos-pendientes.json (esa carpeta no se publica).",
+  "proyectos": [
+    {
+      "slug": "naturgy",
+      "titulo": "Naturgy",
+      "tipo": "Evento corporativo",
+      "lugar": "Valencia",
+      "anio": "2026",
+      "via": "",
+      "areas": [
+        "Espacios y eventos"
+      ],
+      "descripcion": "Diseño del evento corporativo celebrado en Valencia para reconocer a entidades e iniciativas de energía e impacto social por su contribución a la zona tras la DANA.",
+      "portada": "naturgy-portada.webp",
+      "imagenes": [
+        "naturgy-1.webp",
+        "naturgy-2.webp",
+        "naturgy-3.webp",
+        "naturgy-4.webp"
+      ]
+    },
+    {
+      "slug": "sunglass-hut",
+      "titulo": "Sunglass Hut Summer Event",
+      "tipo": "Evento de marca",
+      "lugar": "Barcelona",
+      "anio": "2026",
+      "via": "",
+      "areas": [
+        "Espacios y eventos"
+      ],
+      "descripcion": "Evento en Barcelona para presentar las nuevas colecciones a creadores de contenido: un espacio de marca pensado para descubrir el producto, relacionarse y grabar.",
+      "portada": "sunglass-hut-portada.webp",
+      "imagenes": [
+        "sunglass-hut-1.webp",
+        "sunglass-hut-2.webp",
+        "sunglass-hut-3.webp"
+      ]
+    },
+    {
+      "slug": "the-ordinary",
+      "titulo": "The Ordinary",
+      "tipo": "Activación de marca",
+      "lugar": "",
+      "anio": "2026",
+      "via": "",
+      "areas": [
+        "Espacios y eventos"
+      ],
+      "descripcion": "Una de las primeras grandes activaciones de la marca en España. Llevamos su estética de laboratorio al espacio: clínico, mínimo y completamente blanco, del diseño general al último detalle.",
+      "portada": "the-ordinary-portada.webp",
+      "imagenes": [
+        "the-ordinary-1.webp",
+        "the-ordinary-2.webp",
+        "the-ordinary-3.webp",
+        "the-ordinary-4.webp"
+      ]
+    },
+    {
+      "slug": "patron-tequila",
+      "titulo": "Patrón Tequila",
+      "tipo": "Intervención de marca",
+      "lugar": "Madrid",
+      "anio": "",
+      "via": "Mälmo BTL (Bacardí)",
+      "areas": [
+        "Espacios y eventos"
+      ],
+      "descripcion": "Intervenciones de marca en clubs nocturnos: elementos luminosos, materiales prémium y detalles arquitectónicos que se integran sin invadir la identidad del local.",
+      "portada": "patron-tequila-portada.webp",
+      "imagenes": [
+        "patron-tequila-1.webp",
+        "patron-tequila-2.webp",
+        "patron-tequila-3.webp",
+        "patron-tequila-4.jpg",
+        "patron-tequila-5.webp",
+        "patron-tequila-6.webp",
+        "patron-tequila-7.webp"
+      ]
+    },
+    {
+      "slug": "grey-goose",
+      "titulo": "Grey Goose",
+      "tipo": "Intervención de marca",
+      "lugar": "Madrid",
+      "anio": "",
+      "via": "Mälmo BTL (Bacardí)",
+      "areas": [
+        "Espacios y eventos"
+      ],
+      "descripcion": "Serie de intervenciones en clubs nocturnos que llevan la estética limpia y sofisticada de la marca al espacio: presencia elegante y discreta, sin alterar la atmósfera del local.",
+      "portada": "grey-goose-portada.webp",
+      "imagenes": [
+        "grey-goose-1.webp",
+        "grey-goose-2.webp",
+        "grey-goose-3.webp",
+        "grey-goose-4.webp",
+        "grey-goose-5.webp",
+        "grey-goose-6.webp",
+        "grey-goose-7.webp",
+        "grey-goose-8.webp"
+      ]
+    },
+    {
+      "slug": "logiplay-rioja",
+      "titulo": "Logiplay 2025 y Rioja 100 Aniversario",
+      "tipo": "Eventos",
+      "lugar": "Madrid",
+      "anio": "2025",
+      "via": "Equipo Singular",
+      "areas": [
+        "Espacios y eventos"
+      ],
+      "descripcion": "Dos eventos en las salas del Cine Callao y dos atmósferas opuestas: un lenguaje tecnológico y dinámico para Logiplay 2025 y un escenario cálido y sofisticado para el centenario de Rioja.",
+      "portada": "logiplay-rioja-portada.webp",
+      "imagenes": [
+        "logiplay-rioja-1.webp",
+        "logiplay-rioja-2.webp",
+        "logiplay-rioja-3.webp",
+        "logiplay-rioja-4.webp",
+        "logiplay-rioja-5.webp"
+      ]
+    },
+    {
+      "slug": "stands-ferias",
+      "titulo": "Stands y ferias",
+      "tipo": "Arquitectura efímera",
+      "lugar": "Madrid",
+      "anio": "",
+      "via": "",
+      "areas": [
+        "Espacios y eventos"
+      ],
+      "descripcion": "Stands de líneas limpias e iluminación precisa, pensados para atraer en segundos en entornos saturados y dejar que la marca se lea rápido. Clientes varios.",
+      "portada": "stands-ferias-portada.webp",
+      "imagenes": [
+        "stands-ferias-1.webp",
+        "stands-ferias-2.webp",
+        "stands-ferias-3.webp",
+        "stands-ferias-4.webp",
+        "stands-ferias-5.webp",
+        "stands-ferias-6.webp",
+        "stands-ferias-7.webp",
+        "stands-ferias-8.webp"
+      ]
+    },
+    {
+      "slug": "eventos-aire-libre",
+      "titulo": "Eventos al aire libre",
+      "tipo": "Eventos",
+      "lugar": "Madrid",
+      "anio": "",
+      "via": "",
+      "areas": [
+        "Espacios y eventos"
+      ],
+      "descripcion": "Propuestas para exterior que tratan la luz, el clima y el flujo de personas como variables vivas: estructuras ligeras, materiales honestos e iluminación que acompaña el ritmo del día. Clientes varios.",
+      "portada": "eventos-aire-libre-portada.webp",
+      "imagenes": [
+        "eventos-aire-libre-1.webp",
+        "eventos-aire-libre-2.webp",
+        "eventos-aire-libre-3.webp",
+        "eventos-aire-libre-4.webp",
+        "eventos-aire-libre-5.webp",
+        "eventos-aire-libre-6.webp",
+        "eventos-aire-libre-7.webp",
+        "eventos-aire-libre-8.webp"
+      ]
+    },
+    {
+      "slug": "eventos-varios",
+      "titulo": "Eventos varios",
+      "tipo": "Eventos y escenografía",
+      "lugar": "Madrid",
+      "anio": "",
+      "via": "",
+      "areas": [
+        "Espacios y eventos"
+      ],
+      "descripcion": "Escenografías, activaciones y eventos de distinta escala. Arquitectura efímera, iluminación y gráfica trabajan juntas para que el espacio acompañe sin robar protagonismo. Clientes varios.",
+      "portada": "eventos-varios-portada.webp",
+      "imagenes": [
+        "eventos-varios-1.webp",
+        "eventos-varios-2.webp",
+        "eventos-varios-3.webp",
+        "eventos-varios-4.webp",
+        "eventos-varios-5.webp",
+        "eventos-varios-6.webp",
+        "eventos-varios-7.webp",
+        "eventos-varios-8.webp"
+      ]
+    },
+    {
+      "slug": "beach-house-ibiza",
+      "titulo": "Merchandising Beach House Ibiza",
+      "tipo": "Gráfica y merchandising de evento",
+      "lugar": "Ibiza",
+      "anio": "2026",
+      "via": "",
+      "areas": [
+        "Marca y diseño gráfico"
+      ],
+      "descripcion": "Colección de merchandising para Beach House Ibiza: los doce signos del zodiaco dibujados como cartas celestes, en una serie de láminas y aplicados a camiseta, tote bag y pañuelo.",
+      "entregables": [
+        "Ilustración de los doce signos",
+        "Serie de láminas",
+        "Camiseta",
+        "Tote bag",
+        "Pañuelo"
+      ],
+      "portada": "beach-house-ibiza-portada.webp",
+      "imagenes": [
+        "beach-house-ibiza-1.webp",
+        "beach-house-ibiza-2.webp",
+        "beach-house-ibiza-3.webp",
+        "beach-house-ibiza-4.webp",
+        "beach-house-ibiza-5.webp",
+        "beach-house-ibiza-6.webp",
+        "beach-house-ibiza-7.webp",
+        "beach-house-ibiza-8.webp",
+        "beach-house-ibiza-9.webp"
+      ]
+    },
+    {
+      "slug": "el-punto-rojo",
+      "titulo": "El Punto Rojo",
+      "tipo": "Identidad visual",
+      "lugar": "",
+      "anio": "2026",
+      "via": "",
+      "areas": [
+        "Marca y diseño gráfico"
+      ],
+      "entregables": [
+        "Identidad visual",
+        "Aplicaciones",
+        "Merchandising",
+        "Gráfica",
+        "Motion",
+        "Diseño web"
+      ],
+      "portada": "el-punto-rojo-portada.webp",
+      "imagenes": [
+        {
+          "src": "el-punto-rojo-1.webp",
+          "pie": "El punto final mide lo mismo que la altura de la «x»: es un punto y a la vez un símbolo."
+        },
+        {
+          "src": "el-punto-rojo-2.webp",
+          "pie": "Versiones sobre rojo, apilada y el sello, que se usa en pegatinas, avatar y el sello de entrada."
+        },
+        {
+          "src": "el-punto-rojo-8.webp",
+          "pie": "Merchandising: bolsa de tela, mecheros, pulseras de acceso, posavasos, chapa y caja de cerillas."
+        },
+        {
+          "src": "el-punto-rojo-4.webp",
+          "pie": "Recursos gráficos: entre muchos puntos apagados, uno encendido (el punto de encuentro), el punto como ventana para la fotografía y frases cortas que terminan siempre en punto."
+        },
+        {
+          "src": "el-punto-rojo-5.webp",
+          "pie": "Carteles de la primera semana, para calle y redes. Cada noche tiene un color y una anchura de letra."
+        },
+        {
+          "src": "el-punto-rojo-motion.html",
+          "pie": "Logo en movimiento: cortes secos a cada medio golpe, como las visuales de un VJ. El logo, las palabras sueltas a pantalla completa, el punto que golpea, filas que corren en sentidos opuestos y destellos de estrobo. Un bucle de 4 compases que sigue el tempo de la sesión."
+        },
+        {
+          "src": "el-punto-rojo-disco.html",
+          "pie": "Punto disco: el punto parpadea rápido en colores de pista y se queda en rojo. Pieza aparte para anunciar fiestas especiales y para las pantallas de la sala."
+        },
+        {
+          "src": "el-punto-rojo-6.webp",
+          "pie": "Web: la agenda es la portada. Cada noche ocupa una línea y la entrada se compra en dos toques desde el móvil."
+        },
+        {
+          "src": "el-punto-rojo-3.webp",
+          "pie": "Cabina DJ."
+        }
+      ],
+      "resumen": "Identidad para un club que quería ser un sitio donde quedar, no otra discoteca.",
+      "detalle": [
+        "Un antiguo almacén de 900 m² y un sector lleno de clubes que se parecen entre sí. Los fundadores querían que se viniera por la música y por la gente.",
+        "Convertimos el nombre en la idea: un punto rojo que cierra el logotipo, ilumina la fachada, marca la cabina y termina cada mensaje. Directo y sin adornos. Y punto."
+      ]
+    },
+    {
+      "slug": "pilates-princess",
+      "titulo": "Pilates Princess",
+      "tipo": "Branding, redes, web y merchandising",
+      "lugar": "",
+      "anio": "2026",
+      "via": "",
+      "areas": [
+        "Marca y diseño gráfico",
+        "Web"
+      ],
+      "entregables": [
+        "Logo y variantes",
+        "Logo animado",
+        "Gráfica de apoyo",
+        "Diseño de feed",
+        "Diseño de posts y stories",
+        "Merchandising",
+        "Web con e-commerce integrado"
+      ],
+      "portada": "pilates-princess-portada.webp",
+      "imagenes": [
+        {
+          "src": "pilates-princess-1.webp",
+          "ancha": true
+        },
+        {
+          "src": "pilates-princess-2.webp",
+          "pie": "Logo y variantes.",
+          "ancha": true
+        },
+        {
+          "src": "pilates-princess-logo/index.html?v=2",
+          "pie": "Logo animado.",
+          "aspecto": "16 / 9"
+        },
+        {
+          "src": "pilates-princess-3.webp",
+          "pie": "Gráfica de apoyo: patrones y stickers.",
+          "ancha": true
+        },
+        {
+          "src": "pilates-princess-4.webp",
+          "pie": "Diseño de feed de Instagram.",
+          "ancha": true
+        },
+        {
+          "src": "pilates-princess-5.webp",
+          "pie": "Diseño de posts: carrusel.",
+          "ancha": true
+        },
+        {
+          "src": "pilates-princess-6.webp",
+          "pie": "Diseño de stories.",
+          "ancha": true
+        },
+        {
+          "src": "pilates-princess-7.webp",
+          "pie": "Merchandising.",
+          "ancha": true
+        },
+        {
+          "src": "pilates-princess-8.webp",
+          "pie": "Web con e-commerce integrado.",
+          "ancha": true
+        }
+      ],
+      "descripcion": "Identidad, redes sociales, merchandising y web con tienda online para un estudio boutique de pilates."
+    },
+    {
+      "slug": "chat-clinicas",
+      "titulo": "Citas y reseñas para clínicas",
+      "tipo": "Asistente con IA",
+      "lugar": "",
+      "anio": "",
+      "via": "",
+      "cliente": "Confidencial",
+      "areas": [
+        "Agentes y chats con IA"
+      ],
+      "descripcion": "Un asistente por chat que reserva citas sobre la agenda real de la clínica y, tras la visita, recoge la opinión del paciente.",
+      "entregables": [
+        "Reserva por chat",
+        "Cambios y cancelaciones",
+        "Recogida de reseñas",
+        "Sincronización de horarios",
+        "Panel de recepción"
+      ],
+      "portada": "chat-clinicas-portada.webp",
+      "imagenes": [
+        {
+          "src": "chat-clinicas/video-1.html?v=2",
+          "pie": "Reserva por chat.",
+          "aspecto": "16 / 10"
+        },
+        {
+          "src": "chat-clinicas/video-2.html?v=2",
+          "pie": "Reseña tras la visita.",
+          "aspecto": "16 / 10"
+        },
+        {
+          "src": "chat-clinicas/video-3.html?v=2",
+          "pie": "Cambiar o cancelar.",
+          "aspecto": "16 / 10"
+        },
+        {
+          "src": "chat-clinicas/video-4.html?v=2",
+          "pie": "Horarios del equipo.",
+          "aspecto": "16 / 10"
+        },
+        {
+          "src": "chat-clinicas-1.webp",
+          "pie": "Panel de recepción.",
+          "ancha": true
+        },
+        {
+          "src": "chat-clinicas-2.webp",
+          "pie": "Recogida de reseñas.",
+          "ancha": true
+        },
+        {
+          "src": "chat-clinicas-3.webp",
+          "pie": "Funciones del asistente.",
+          "ancha": true
+        },
+        {
+          "src": "chat-clinicas-4.webp",
+          "pie": "Sincronización de horarios.",
+          "ancha": true
+        },
+        {
+          "src": "chat-clinicas-5.webp",
+          "pie": "Funciones programadas.",
+          "ancha": true
+        }
+      ]
+    }
+  ]
+}
