@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Hesperia Design &amp; Build — Mediterranean Living, South Florida</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/assets/fuentes/hesperia.css">
+<script src="./image-slot.js"></script>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#F4EFE6;color:#1A1A1A;font-family:'DM Sans',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:inherit;text-decoration:none}
+a:hover{color:#B78E44}
+::selection{background:#DAD2C3}
+</style>
+</helmet>
+
+<div style="background:#F4EFE6;overflow-x:hidden">
+
+<div style="position:fixed;right:clamp(16px,2.4vw,32px);bottom:clamp(16px,2.4vw,32px);z-index:60;display:flex;flex-direction:column;align-items:flex-end;gap:10px">
+  <a href="https://wa.me/17862389572" target="_blank" rel="noopener" aria-label="WhatsApp" style="display:flex;align-items:center;gap:12px;background:#1A1A1A;color:#E9E2D6;padding:15px 22px 13px;font-family:'Josefin Sans',sans-serif;font-size:12px;letter-spacing:0.26em;text-transform:uppercase;box-shadow:0 10px 30px rgba(0,0,0,0.25)" style-hover="background:#B78E44;color:#FFFFFF">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"></path></svg>
+    WhatsApp
+  </a>
+  <a href="tel:+17862389572" aria-label="Call" style="display:flex;align-items:center;gap:12px;background:#E9E2D6;color:#1A1A1A;padding:15px 22px 13px;font-family:'Josefin Sans',sans-serif;font-size:12px;letter-spacing:0.26em;text-transform:uppercase;box-shadow:0 10px 30px rgba(0,0,0,0.18)" style-hover="background:#B78E44;color:#FFFFFF">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"></path></svg>
+    (786) 238-9572
+  </a>
+</div>
+<section id="top" data-screen-label="01 Hero" style="position:relative;height:100vh;min-height:720px;background:#DAD2C3;color:#FFFFFF;overflow:hidden">
+  <div ref="{{ heroRef }}" style="position:absolute;inset:0;transform:scale(1.12);transition:transform 9s cubic-bezier(.2,.6,.2,1)">
+    <image-slot src="fotos/v4-hero.webp" id="v4-hero" shape="rect" placeholder="HERO · Modern Mediterranean villa, white lime plaster, olive trees, golden light"></image-slot>
+  </div>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,15,0.68) 0%,rgba(20,18,15,0.12) 28%,rgba(20,18,15,0.35) 45%,rgba(20,18,15,0.7) 100%);pointer-events:none"></div>
+  <header style="position:absolute;top:0;left:0;right:0;padding:30px clamp(20px,4vw,64px);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;pointer-events:none">
+    <nav style="display:flex;gap:clamp(16px,2.4vw,40px);flex-wrap:wrap;font-family:'Josefin Sans',sans-serif;font-size:12px;font-weight:300;letter-spacing:0.32em;text-transform:uppercase;pointer-events:auto">
+      <a href="#services">Services</a><a href="#work">Projects</a><a href="#approach">Approach</a>
+    </nav>
+    <a href="#top" style="display:flex;flex-direction:column;align-items:center;gap:10px;pointer-events:auto;color:#FFFFFF">
+      <img src="assets/hesperia-mark.png" alt="" style="width:52px;height:52px;object-fit:contain;filter:brightness(0) invert(1) drop-shadow(0 2px 10px rgba(0,0,0,0.45))"></img>
+      <span style="font-family:'Cinzel',serif;font-weight:400;font-size:22px;letter-spacing:0.42em;line-height:1;padding-left:0.5em;text-shadow:0 2px 14px rgba(0,0,0,0.45)">HESPERIA</span>
+      <span style="font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:400;letter-spacing:0.5em;padding-left:0.5em;line-height:1;text-shadow:0 2px 10px rgba(0,0,0,0.45)">DESIGN &amp; BUILD</span>
+    </a>
+    <div style="display:flex;justify-content:flex-end;pointer-events:auto">
+      <a href="#contact" style="font-family:'Josefin Sans',sans-serif;font-size:12px;font-weight:300;letter-spacing:0.32em;text-transform:uppercase;padding:14px 24px 12px;border:1px solid rgba(255,255,255,0.75);white-space:nowrap" style-hover="background:#FFFFFF;color:#1A1A1A">Consultation</a>
+    </div>
+  </header>
+  <div style="position:absolute;left:0;right:0;bottom:0;padding:0 clamp(20px,4vw,64px) clamp(36px,4vw,56px);display:flex;flex-direction:column;gap:clamp(28px,3vw,44px);pointer-events:none">
+    <h1 style="margin:0;font-family:'Marcellus','Josefin Sans',sans-serif;font-weight:300;font-size:clamp(44px,7.6vw,140px);line-height:0.92;letter-spacing:0.02em;text-transform:uppercase;text-shadow:0 2px 30px rgba(0,0,0,0.25)">The Art of<br>Mediterranean Living</h1>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,0.4);padding-top:24px">
+      <p style="margin:0;max-width:440px;font-size:16px;line-height:1.7">We give dated Florida homes the warmth of a European villa — designed and built by one team.</p>
+      <a href="#contact" style="pointer-events:auto;font-family:'Josefin Sans',sans-serif;font-size:12px;font-weight:400;letter-spacing:0.32em;text-transform:uppercase;padding:19px 34px 17px;background:#B78E44;color:#1A1A1A;white-space:nowrap" style-hover="background:#E9E2D6;color:#1A1A1A">Book a Consultation</a>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="02 Intro" style="max-width:none;background:#E9E2D6;margin:0 auto;padding:clamp(110px,13vw,210px) clamp(20px,4vw,64px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(16px,2vw,32px);align-items:start">
+  <div data-reveal="1" style="grid-column:1/-1;display:flex;flex-direction:column;gap:32px;max-width:1180px;padding-bottom:clamp(48px,6vw,96px)">
+    <span style="font-family:'Josefin Sans',sans-serif;font-size:12px;font-weight:400;letter-spacing:0.4em;text-transform:uppercase;color:#6B705C">Inspired by Europe · Built in South Florida</span>
+    <p style="margin:0;font-family:'Marcellus','Josefin Sans',sans-serif;font-weight:200;font-size:clamp(30px,3.8vw,62px);line-height:1.12;letter-spacing:0.01em;text-transform:uppercase;text-wrap:balance">Light across plaster. Cool stone underfoot. Doors open to the garden. We design homes the way they’re lived on the Mediterranean coast.</p>
+  </div>
+  <div data-reveal="1" style="grid-column:span 7;aspect-ratio:4/3;background:#DAD2C3;min-width:0"><image-slot src="fotos/v4-intro-1.webp" id="v4-intro-1" shape="rect" placeholder="Bright Mediterranean dining room, white tiles, linen"></image-slot></div>
+  <div data-reveal="1" style="grid-column:span 5;display:flex;flex-direction:column;gap:28px;padding-top:clamp(40px,10vw,180px);min-width:0">
+    <div style="aspect-ratio:4/5;background:#DAD2C3"><image-slot src="fotos/v4-intro-2.webp" id="v4-intro-2" shape="rect" placeholder="Courtyard with orange tree"></image-slot></div>
+    <p style="margin:0;max-width:400px;font-size:16px;line-height:1.75;color:#4D473E">One team designs, permits and builds — so the home you imagine is the home you live in.</p>
+  </div>
+</section>
+
+<section id="services" data-screen-label="03 Services" style="background:#E9E2D6">
+  <div style="max-width:1560px;margin:0 auto;padding:clamp(110px,12vw,190px) clamp(20px,4vw,64px);display:flex;flex-direction:column;gap:clamp(80px,10vw,160px)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <span style="font-family:'Josefin Sans',sans-serif;font-size:12px;font-weight:400;letter-spacing:0.4em;text-transform:uppercase;color:#6B705C">What We Do</span>
+        <h2 style="margin:0;font-family:'Marcellus','Josefin Sans',sans-serif;font-weight:400;font-size:clamp(48px,7vw,124px);line-height:0.92;letter-spacing:0.01em;text-transform:uppercase">Three<br>transformations.</h2>
+      </div>
+      <p style="margin:0;max-width:400px;font-size:16px;line-height:1.75;color:#4D473E">We take dated 1990s and 2000s Florida homes and give them the warmth of a European villa — without touching the structure that makes them sound.</p>
+    </div>
+    <article data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,5vw,96px);align-items:center">
+        <div style="order:1;position:relative;aspect-ratio:5/4;background:#DAD2C3;overflow:hidden">
+          <image-slot src="fotos/v4-s1.webp" id="v4-s1" shape="rect" placeholder="PROMPT S1 · Interiors · Warm Minimalism"></image-slot>
+          <span style="position:absolute;top:20px;left:20px;font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.3em;background:#1A1A1A;color:#E9E2D6;padding:9px 12px 7px;pointer-events:none">01 / 03</span>
+        </div>
+        <div style="order:2;display:flex;flex-direction:column;gap:26px;max-width:520px">
+          <span style="font-family:'Marcellus','Josefin Sans',sans-serif;font-size:clamp(64px,8vw,120px);line-height:0.8;color:#B78E44">01</span>
+          <h3 style="margin:0;font-family:'Marcellus','Josefin Sans',sans-serif;font-weight:400;font-size:clamp(36px,4.2vw,68px);line-height:0.98;letter-spacing:0.01em;text-transform:uppercase">Interiors · Warm Minimalism</h3>
+          <p style="margin:0;font-size:17px;line-height:1.75;color:#4D473E;text-wrap:pretty">Dark woods, brown granite, heavy columns and yellowed walls give way to calm. We keep the classic soul and edit everything else — smooth lime plaster and microcement in limestone and bone, sandblasted beams returned to natural oak, false arches removed to open the plan to the light.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <span style="font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;background:#6B705C;padding:10px 14px 8px;color:#FFFFFF">Lime plaster &amp; microcement</span>
+            <span style="font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;background:#6B705C;padding:10px 14px 8px;color:#FFFFFF">Matte limestone &amp; travertine</span>
+            <span style="font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;background:#6B705C;padding:10px 14px 8px;color:#FFFFFF">Wide-plank European oak</span>
+            <span style="font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;background:#6B705C;padding:10px 14px 8px;color:#FFFFFF">Open, light-filled plans</span>
+          </div>
+          <a href="#work" style="align-self:flex-start;font-family:'Josefin Sans',sans-serif;font-size:12px;letter-spacing:0.3em;text-transform:uppercase;padding-bottom:6px;border-bottom:1px solid #1A1A1A">See a transformation →</a>
+        </div>
+      </article>
+    <article data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,5vw,96px);align-items:center">
+        <div style="order:2;position:relative;aspect-ratio:5/4;background:#DAD2C3;overflow:hidden">
+          <image-slot src="fotos/v4-s2.webp" id="v4-s2" shape="rect" placeholder="PROMPT S2 · Façade Refinement"></image-slot>
+          <span style="position:absolute;top:20px;left:20px;font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.3em;background:#1A1A1A;color:#E9E2D6;padding:9px 12px 7px;pointer-events:none">02 / 03</span>
+        </div>
+        <div style="order:1;display:flex;flex-direction:column;gap:26px;max-width:520px">
+          <span style="font-family:'Marcellus','Josefin Sans',sans-serif;font-size:clamp(64px,8vw,120px);line-height:0.8;color:#B78E44">02</span>
+          <h3 style="margin:0;font-family:'Marcellus','Josefin Sans',sans-serif;font-weight:400;font-size:clamp(36px,4.2vw,68px);line-height:0.98;letter-spacing:0.01em;text-transform:uppercase">Façade Refinement</h3>
+          <p style="margin:0;font-size:17px;line-height:1.75;color:#4D473E;text-wrap:pretty">The architecture stays; the excess goes. Foam moldings, faux corbels and resin ornament are stripped away. In their place: slender wrought iron, Spanish-inspired lanterns and a grand arched entry door in solid oak or teak — fully impact-rated to Florida code.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <span style="font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;background:#6B705C;padding:10px 14px 8px;color:#FFFFFF">Ornament removal</span>
+            <span style="font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;background:#6B705C;padding:10px 14px 8px;color:#FFFFFF">Hand-forged iron &amp; lighting</span>
+            <span style="font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;background:#6B705C;padding:10px 14px 8px;color:#FFFFFF">Arched impact wood doors</span>
+          </div>
+          <a href="#work" style="align-self:flex-start;font-family:'Josefin Sans',sans-serif;font-size:12px;letter-spacing:0.3em;text-transform:uppercase;padding-bottom:6px;border-bottom:1px solid #1A1A1A">See a transformation →</a>
+        </div>
+      </article>
+    <article data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,5vw,96px);align-items:center">
+        <div style="order:1;position:relative;aspect-ratio:5/4;background:#DAD2C3;overflow:hidden">
+          <image-slot src="fotos/v4-s3.webp" id="v4-s3" shape="rect" placeholder="PROMPT S3 · Resort Outdoor Living"></image-slot>
+          <span style="position:absolute;top:20px;left:20px;font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.3em;background:#1A1A1A;color:#E9E2D6;padding:9px 12px 7px;pointer-events:none">03 / 03</span>
+        </div>
+        <div style="order:2;display:flex;flex-direction:column;gap:26px;max-width:520px">
+          <span style="font-family:'Marcellus','Josefin Sans',sans-serif;font-size:clamp(64px,8vw,120px);line-height:0.8;color:#B78E44">03</span>
+          <h3 style="margin:0;font-family:'Marcellus','Josefin Sans',sans-serif;font-weight:400;font-size:clamp(36px,4.2vw,68px);line-height:0.98;letter-spacing:0.01em;text-transform:uppercase">Resort Outdoor Living</h3>
+          <p style="margin:0;font-size:17px;line-height:1.75;color:#4D473E;text-wrap:pretty">In South Florida, you buy the climate. Our backyards are where the return lives — coral-stone and handmade terracotta terraces that stay cool underfoot, sculptural Mediterranean planting adapted to the tropics, washed-oak pergolas and outdoor kitchens finished in microcement and zellige.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <span style="font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;background:#6B705C;padding:10px 14px 8px;color:#FFFFFF">Coral stone &amp; terracotta</span>
+            <span style="font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;background:#6B705C;padding:10px 14px 8px;color:#FFFFFF">Shady Lady olives &amp; bougainvillea</span>
+            <span style="font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;background:#6B705C;padding:10px 14px 8px;color:#FFFFFF">Pergolas &amp; outdoor kitchens</span>
+          </div>
+          <a href="#work" style="align-self:flex-start;font-family:'Josefin Sans',sans-serif;font-size:12px;letter-spacing:0.3em;text-transform:uppercase;padding-bottom:6px;border-bottom:1px solid #1A1A1A">See a transformation →</a>
+        </div>
+      </article>
+  </div>
+</section>
+
+<section data-screen-label="04 Statement" style="position:relative;height:clamp(560px,95vh,1040px);background:#DAD2C3;color:#FFFFFF;overflow:hidden">
+  <div style="position:absolute;inset:0"><image-slot src="fotos/v4-wide.webp" id="v4-wide" shape="rect" placeholder="WIDE · Terracotta terrace, potted plants, Provençal house"></image-slot></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(107,112,92,0.35),rgba(26,26,26,0.45));pointer-events:none"></div>
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:0 clamp(20px,4vw,64px);text-align:center;pointer-events:none">
+    <img src="assets/hesperia-mark.png" alt="" style="width:52px;height:52px;object-fit:contain;filter:brightness(0) invert(1)"></img>
+    <h2 style="margin:0;max-width:1200px;font-family:'Marcellus','Josefin Sans',sans-serif;font-weight:100;font-size:clamp(40px,6.8vw,120px);line-height:0.98;letter-spacing:0.02em;text-transform:uppercase;text-wrap:balance">Where stone<br>meets light</h2>
+  </div>
+</section>
+
+<section id="work" data-screen-label="05 Projects" style="background:#1A1A1A;color:#E9E2D6">
+  <div style="max-width:1560px;margin:0 auto;padding:clamp(110px,12vw,190px) clamp(20px,4vw,64px);display:flex;flex-direction:column;gap:clamp(96px,11vw,170px)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <span style="font-family:'Josefin Sans',sans-serif;font-size:12px;font-weight:400;letter-spacing:0.4em;text-transform:uppercase;color:#B78E44">Selected Projects</span>
+        <h2 style="margin:0;font-family:'Marcellus','Josefin Sans',sans-serif;font-weight:400;font-size:clamp(48px,7vw,124px);line-height:0.92;letter-spacing:0.01em;text-transform:uppercase">Before.<br>After.</h2>
+      </div>
+      <p style="margin:0;max-width:400px;font-size:16px;line-height:1.75;color:#CFC8BB">Most of our clients don’t move — they reimagine. Drag each image to see the transformation.</p>
+    </div>
+    <article style="display:flex;flex-direction:column;gap:clamp(24px,3vw,40px)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;border-top:1px solid #3A3833;padding-top:28px">
+          <div style="display:flex;align-items:baseline;gap:clamp(16px,2vw,32px);flex-wrap:wrap">
+            <span style="font-family:'Marcellus','Josefin Sans',sans-serif;font-size:clamp(20px,2vw,28px);color:#B78E44">01</span>
+            <h3 style="margin:0;font-family:'Marcellus','Josefin Sans',sans-serif;font-weight:400;font-size:clamp(36px,4.6vw,76px);line-height:0.95;letter-spacing:0.01em;text-transform:uppercase;color:#FFFFFF">Casa Serena</h3>
+          </div>
+          <div style="display:flex;gap:clamp(20px,3vw,48px);flex-wrap:wrap;font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.26em;text-transform:uppercase">
+            <span style="display:flex;flex-direction:column;gap:8px"><span style="color:#8C8476">Location</span><span style="color:#E9E2D6">Coral Gables</span></span>
+            <span style="display:flex;flex-direction:column;gap:8px"><span style="color:#8C8476">Scope</span><span style="color:#E9E2D6">Full interior</span></span>
+            <span style="display:flex;flex-direction:column;gap:8px"><span style="color:#8C8476">Service</span><span style="color:#B78E44">Interiors · Warm Minimalism</span></span>
+          </div>
+        </div>
+        <div onPointerDown="{{ pr0.down }}" onPointerMove="{{ pr0.move }}" onPointerUp="{{ pr0.up }}" style="position:relative;width:100%;aspect-ratio:16/9;min-height:320px;background:#2A2926;overflow:hidden;user-select:none;touch-action:pan-y;cursor:ew-resize">
+          <div style="position:absolute;inset:0"><image-slot src="fotos/v5-p1-before.webp" id="v5-p1-before" shape="rect" placeholder="PROMPT P1-A · BEFORE"></image-slot></div>
+          <div style="position:absolute;inset:0;clip-path:{{ pr0.clip }}"><image-slot src="fotos/v5-p1-after.webp" id="v5-p1-after" shape="rect" placeholder="PROMPT P1-B · AFTER"></image-slot></div>
+          <span style="position:absolute;top:20px;left:20px;font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;background:#1A1A1A;color:#E9E2D6;padding:9px 12px 7px;pointer-events:none">Before</span>
+          <span style="position:absolute;top:20px;right:20px;font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;background:#E9E2D6;color:#1A1A1A;padding:9px 12px 7px;pointer-events:none">After</span>
+          <div style="position:absolute;top:0;bottom:0;left:{{ pr0.left }};width:1px;background:#FFFFFF;pointer-events:none"></div>
+          <div style="position:absolute;top:50%;left:{{ pr0.left }};width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:#E9E2D6;display:flex;align-items:center;justify-content:center;gap:12px;pointer-events:none">
+            <span style="width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-right:6px solid #1A1A1A"></span>
+            <span style="width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:6px solid #1A1A1A"></span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(10px,1.2vw,18px)">
+          <div style="aspect-ratio:4/5;background:#2A2926"><image-slot src="fotos/v5-p1-c.webp" id="v5-p1-c" shape="rect" placeholder="PROMPT P1-C · DETAIL"></image-slot></div>
+          <div style="aspect-ratio:4/5;background:#2A2926"><image-slot src="fotos/v5-p1-d.webp" id="v5-p1-d" shape="rect" placeholder="PROMPT P1-D · DETAIL"></image-slot></div>
+          <div style="aspect-ratio:4/5;background:#2A2926"><image-slot src="fotos/v5-p1-e.webp" id="v5-p1-e" shape="rect" placeholder="PROMPT P1-E · DETAIL"></image-slot></div>
+        </div>
+        <p style="margin:0;max-width:720px;font-size:16px;line-height:1.75;color:#CFC8BB">A 1998 interior of dark cherry, brown granite and textured stucco, edited down to limestone, pale oak and smooth plaster. The false arches came out; the light came in.</p>
+      </article>
+    <article style="display:flex;flex-direction:column;gap:clamp(24px,3vw,40px)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;border-top:1px solid #3A3833;padding-top:28px">
+          <div style="display:flex;align-items:baseline;gap:clamp(16px,2vw,32px);flex-wrap:wrap">
+            <span style="font-family:'Marcellus','Josefin Sans',sans-serif;font-size:clamp(20px,2vw,28px);color:#B78E44">02</span>
+            <h3 style="margin:0;font-family:'Marcellus','Josefin Sans',sans-serif;font-weight:400;font-size:clamp(36px,4.6vw,76px);line-height:0.95;letter-spacing:0.01em;text-transform:uppercase;color:#FFFFFF">Villa Olivo</h3>
+          </div>
+          <div style="display:flex;gap:clamp(20px,3vw,48px);flex-wrap:wrap;font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.26em;text-transform:uppercase">
+            <span style="display:flex;flex-direction:column;gap:8px"><span style="color:#8C8476">Location</span><span style="color:#E9E2D6">Palm Beach</span></span>
+            <span style="display:flex;flex-direction:column;gap:8px"><span style="color:#8C8476">Scope</span><span style="color:#E9E2D6">Façade &amp; entry</span></span>
+            <span style="display:flex;flex-direction:column;gap:8px"><span style="color:#8C8476">Service</span><span style="color:#B78E44">Façade Refinement</span></span>
+          </div>
+        </div>
+        <div onPointerDown="{{ pr1.down }}" onPointerMove="{{ pr1.move }}" onPointerUp="{{ pr1.up }}" style="position:relative;width:100%;aspect-ratio:16/9;min-height:320px;background:#2A2926;overflow:hidden;user-select:none;touch-action:pan-y;cursor:ew-resize">
+          <div style="position:absolute;inset:0"><image-slot src="fotos/v5-p2-before.webp" id="v5-p2-before" shape="rect" placeholder="PROMPT P2-A · BEFORE"></image-slot></div>
+          <div style="position:absolute;inset:0;clip-path:{{ pr1.clip }}"><image-slot src="fotos/v5-p2-after.webp" id="v5-p2-after" shape="rect" placeholder="PROMPT P2-B · AFTER"></image-slot></div>
+          <span style="position:absolute;top:20px;left:20px;font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;background:#1A1A1A;color:#E9E2D6;padding:9px 12px 7px;pointer-events:none">Before</span>
+          <span style="position:absolute;top:20px;right:20px;font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;background:#E9E2D6;color:#1A1A1A;padding:9px 12px 7px;pointer-events:none">After</span>
+          <div style="position:absolute;top:0;bottom:0;left:{{ pr1.left }};width:1px;background:#FFFFFF;pointer-events:none"></div>
+          <div style="position:absolute;top:50%;left:{{ pr1.left }};width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:#E9E2D6;display:flex;align-items:center;justify-content:center;gap:12px;pointer-events:none">
+            <span style="width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-right:6px solid #1A1A1A"></span>
+            <span style="width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:6px solid #1A1A1A"></span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(10px,1.2vw,18px)">
+          <div style="aspect-ratio:4/5;background:#2A2926"><image-slot src="fotos/v5-p2-c.webp" id="v5-p2-c" shape="rect" placeholder="PROMPT P2-C · DETAIL"></image-slot></div>
+          <div style="aspect-ratio:4/5;background:#2A2926"><image-slot src="fotos/v5-p2-d.webp" id="v5-p2-d" shape="rect" placeholder="PROMPT P2-D · DETAIL"></image-slot></div>
+          <div style="aspect-ratio:4/5;background:#2A2926"><image-slot src="fotos/v5-p2-e.webp" id="v5-p2-e" shape="rect" placeholder="PROMPT P2-E · DETAIL"></image-slot></div>
+        </div>
+        <p style="margin:0;max-width:720px;font-size:16px;line-height:1.75;color:#CFC8BB">Foam moldings, faux corbels and resin balustrades removed. Slender iron, Spanish lanterns and an arched teak impact door now carry the house.</p>
+      </article>
+    <article style="display:flex;flex-direction:column;gap:clamp(24px,3vw,40px)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;border-top:1px solid #3A3833;padding-top:28px">
+          <div style="display:flex;align-items:baseline;gap:clamp(16px,2vw,32px);flex-wrap:wrap">
+            <span style="font-family:'Marcellus','Josefin Sans',sans-serif;font-size:clamp(20px,2vw,28px);color:#B78E44">03</span>
+            <h3 style="margin:0;font-family:'Marcellus','Josefin Sans',sans-serif;font-weight:400;font-size:clamp(36px,4.6vw,76px);line-height:0.95;letter-spacing:0.01em;text-transform:uppercase;color:#FFFFFF">Residence Cipresso</h3>
+          </div>
+          <div style="display:flex;gap:clamp(20px,3vw,48px);flex-wrap:wrap;font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.26em;text-transform:uppercase">
+            <span style="display:flex;flex-direction:column;gap:8px"><span style="color:#8C8476">Location</span><span style="color:#E9E2D6">Pinecrest</span></span>
+            <span style="display:flex;flex-direction:column;gap:8px"><span style="color:#8C8476">Scope</span><span style="color:#E9E2D6">Pool, loggia &amp; garden</span></span>
+            <span style="display:flex;flex-direction:column;gap:8px"><span style="color:#8C8476">Service</span><span style="color:#B78E44">Resort Outdoor Living</span></span>
+          </div>
+        </div>
+        <div onPointerDown="{{ pr2.down }}" onPointerMove="{{ pr2.move }}" onPointerUp="{{ pr2.up }}" style="position:relative;width:100%;aspect-ratio:16/9;min-height:320px;background:#2A2926;overflow:hidden;user-select:none;touch-action:pan-y;cursor:ew-resize">
+          <div style="position:absolute;inset:0"><image-slot src="fotos/v5-p3-before.webp" id="v5-p3-before" shape="rect" placeholder="PROMPT P3-A · BEFORE"></image-slot></div>
+          <div style="position:absolute;inset:0;clip-path:{{ pr2.clip }}"><image-slot src="fotos/v5-p3-after.webp" id="v5-p3-after" shape="rect" placeholder="PROMPT P3-B · AFTER"></image-slot></div>
+          <span style="position:absolute;top:20px;left:20px;font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;background:#1A1A1A;color:#E9E2D6;padding:9px 12px 7px;pointer-events:none">Before</span>
+          <span style="position:absolute;top:20px;right:20px;font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;background:#E9E2D6;color:#1A1A1A;padding:9px 12px 7px;pointer-events:none">After</span>
+          <div style="position:absolute;top:0;bottom:0;left:{{ pr2.left }};width:1px;background:#FFFFFF;pointer-events:none"></div>
+          <div style="position:absolute;top:50%;left:{{ pr2.left }};width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:#E9E2D6;display:flex;align-items:center;justify-content:center;gap:12px;pointer-events:none">
+            <span style="width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-right:6px solid #1A1A1A"></span>
+            <span style="width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:6px solid #1A1A1A"></span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(10px,1.2vw,18px)">
+          <div style="aspect-ratio:4/5;background:#2A2926"><image-slot src="fotos/v5-p3-c.webp" id="v5-p3-c" shape="rect" placeholder="PROMPT P3-C · DETAIL"></image-slot></div>
+          <div style="aspect-ratio:4/5;background:#2A2926"><image-slot src="fotos/v5-p3-d.webp" id="v5-p3-d" shape="rect" placeholder="PROMPT P3-D · DETAIL"></image-slot></div>
+          <div style="aspect-ratio:4/5;background:#2A2926"><image-slot src="fotos/v5-p3-e.webp" id="v5-p3-e" shape="rect" placeholder="PROMPT P3-E · DETAIL"></image-slot></div>
+        </div>
+        <p style="margin:0;max-width:720px;font-size:16px;line-height:1.75;color:#CFC8BB">A screened pool and bare lawn reborn as a resort courtyard — coral-stone terrace, washed-oak pergola, zellige outdoor kitchen, Shady Lady olives and bougainvillea.</p>
+      </article>
+  </div>
+</section>
+
+<section id="approach" data-screen-label="07 Approach" style="background:#6B705C;color:#F3EEE6">
+  <div style="max-width:1560px;margin:0 auto;padding:clamp(110px,12vw,190px) clamp(20px,4vw,64px);display:flex;flex-direction:column;gap:clamp(56px,7vw,100px)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <span style="font-family:'Josefin Sans',sans-serif;font-size:12px;font-weight:400;letter-spacing:0.4em;text-transform:uppercase;color:#E9E2D6">The Approach</span>
+        <h2 style="margin:0;font-family:'Marcellus','Josefin Sans',sans-serif;font-weight:200;font-size:clamp(40px,4.8vw,80px);line-height:0.98;letter-spacing:0.01em;text-transform:uppercase">From vision<br>to keys</h2>
+      </div>
+      <p style="margin:0;max-width:380px;font-size:15px;line-height:1.7;color:#ECE6DA">Design and build under one roof. One team owns the outcome — one person knows your project end to end.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:clamp(32px,3vw,48px)">
+      <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:18px;padding-top:28px;border-top:1px solid rgba(243,238,230,0.3)">
+          <span style="font-family:'Marcellus','Josefin Sans',sans-serif;font-weight:100;font-size:56px;line-height:1;color:#E9E2D6">{{ st.n }}</span>
+          <span style="font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:#FFFFFF">{{ st.title }}</span>
+          <span style="font-size:15px;line-height:1.7;color:#ECE6DA;text-wrap:pretty">{{ st.body }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="contact" data-screen-label="08 Contact" style="background:#DAD2C3">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr))">
+    <div style="min-height:640px;background:#DAD2C3"><image-slot src="fotos/v4-cta.webp" id="v4-cta" shape="rect" placeholder="Mediterranean residence with palm"></image-slot></div>
+    <div style="padding:clamp(56px,7vw,120px) clamp(24px,5vw,96px);display:flex;flex-direction:column;justify-content:center;gap:30px;max-width:780px">
+      <span style="font-family:'Josefin Sans',sans-serif;font-size:12px;font-weight:400;letter-spacing:0.4em;text-transform:uppercase;color:#6B705C">Start Your Project</span>
+      <h2 style="margin:0;font-family:'Marcellus','Josefin Sans',sans-serif;font-weight:200;font-size:clamp(38px,4.2vw,70px);line-height:1;letter-spacing:0.01em;text-transform:uppercase">Let’s talk about your home</h2>
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ submit }}" style="display:flex;flex-direction:column;gap:24px">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px">
+            <input required="required" type="text" placeholder="Name" style="border:none;border-bottom:1px solid #9C9181;background:transparent;padding:12px 0;font-size:16px;font-family:inherit;font-weight:300;color:#1A1A1A;outline:none"></input>
+            <input required="required" type="email" placeholder="Email" style="border:none;border-bottom:1px solid #9C9181;background:transparent;padding:12px 0;font-size:16px;font-family:inherit;font-weight:300;color:#1A1A1A;outline:none"></input>
+          </div>
+          <input type="text" placeholder="Property location" style="border:none;border-bottom:1px solid #9C9181;background:transparent;padding:12px 0;font-size:16px;font-family:inherit;font-weight:300;color:#1A1A1A;outline:none"></input>
+          <textarea rows="3" placeholder="Tell us about your project" style="border:none;border-bottom:1px solid #9C9181;background:transparent;padding:12px 0;font-size:16px;font-family:inherit;font-weight:300;color:#1A1A1A;outline:none;resize:none"></textarea>
+          <button type="submit" style="align-self:flex-start;font-family:'Josefin Sans',sans-serif;font-size:12px;font-weight:400;letter-spacing:0.32em;text-transform:uppercase;padding:19px 34px 17px;background:#6B705C;color:#FFFFFF;border:none;cursor:pointer" style-hover="background:#1A1A1A">Book a Consultation</button>
+        </form>
+      </sc-if>
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <p style="margin:0;font-size:17px;line-height:1.7;color:#4D473E">Thank you. Our studio will reach out to schedule your consultation.</p>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<footer data-screen-label="09 Footer" style="background:#1A1A1A;color:#CFC6B6">
+  <div style="max-width:1560px;margin:0 auto;padding:clamp(80px,9vw,140px) clamp(20px,4vw,64px) 36px;display:flex;flex-direction:column;align-items:center;gap:52px;text-align:center">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:18px">
+      <img src="assets/hesperia-mark.png" alt="" style="width:64px;height:64px;object-fit:contain"></img>
+      <span style="font-family:'Cinzel',serif;font-weight:400;font-size:clamp(36px,5vw,72px);letter-spacing:0.32em;padding-left:0.42em;line-height:1;color:#FFFFFF">HESPERIA</span>
+      <span style="font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.56em;padding-left:0.56em;color:#B78E44">DESIGN &amp; BUILD</span>
+    </div>
+    <div style="display:flex;gap:clamp(24px,4vw,56px);flex-wrap:wrap;justify-content:center;font-family:'Josefin Sans',sans-serif;font-size:12px;letter-spacing:0.3em;text-transform:uppercase">
+      <a href="#services">Services</a><a href="#work">Projects</a><a href="#approach">Approach</a><a href="#contact">Contact</a><a href="#">Instagram</a>
+    </div>
+    <div style="width:100%;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:24px;border-top:1px solid #34312C;font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.26em;text-transform:uppercase;color:#9C9181">
+      <span>Miami-Dade · Broward · Palm Beach</span>
+      <span>© 2026 Hesperia Design &amp; Build</span>
+    </div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { sent: false, active: 0 };
+  heroRef = React.createRef();
+  componentDidMount() {
+    requestAnimationFrame(() => { if (this.heroRef.current) this.heroRef.current.style.transform = 'scale(1)'; });
+    const els = document.querySelectorAll('[data-reveal]');
+    els.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(40px)'; el.style.transition = 'opacity 1.2s ease, transform 1.2s cubic-bezier(.2,.6,.2,1)'; });
+    this.io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'none'; this.io.unobserve(e.target); }
+    }), { threshold: 0.12 });
+    els.forEach(el => this.io.observe(el));
+  }
+  componentWillUnmount() { this.io && this.io.disconnect(); }
+  renderVals() {
+    const u = id => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=1600&q=80`;
+    const raw = [
+      ['Interiors · Warm Minimalism', 'Dark woods, brown granite, heavy columns and yellowed walls give way to calm. We keep the classic soul and edit everything else — smooth lime plaster and microcement in limestone and bone, sandblasted beams returned to natural oak, false arches removed to open the plan to the light.', '1653972233499-eaad56990299', ['Lime plaster & microcement','Matte limestone & travertine','Wide-plank European oak','Open, light-filled plans']],
+      ['Façade Refinement', 'The architecture stays; the excess goes. Foam moldings, faux corbels and resin ornament are stripped away. In their place: slender wrought iron, Spanish-inspired lanterns and a grand arched entry door in solid oak or teak — fully impact-rated to Florida code.', '1568115286680-d203e08a8be6', ['Ornament removal','Hand-forged iron & lighting','Arched impact wood doors']],
+      ['Resort Outdoor Living', 'In South Florida, you buy the climate. Our backyards are where the return lives — coral-stone and handmade terracotta terraces that stay cool underfoot, sculptural Mediterranean planting adapted to the tropics, washed-oak pergolas and outdoor kitchens finished in microcement and zellige.', '1720161263981-84281892ee4b', ['Coral stone & terracotta','Shady Lady olives & bougainvillea','Pergolas & outdoor kitchens']],
+    ];
+        const pos = this.state.pos || {};
+    const projects = [
+      { name: 'Casa Serena', place: 'Coral Gables', scope: 'Full interior', service: 'Interiors · Warm Minimalism', story: 'A 1998 interior of dark cherry, brown granite and textured stucco, edited down to limestone, pale oak and smooth plaster. The false arches came out; the light came in.' },
+      { name: 'Villa Olivo', place: 'Palm Beach', scope: 'Façade & entry', service: 'Façade Refinement', story: 'Foam moldings, faux corbels and resin balustrades removed. Slender iron, Spanish lanterns and an arched teak impact door now carry the house.' },
+      { name: 'Residence Cipresso', place: 'Pinecrest', scope: 'Pool, loggia & garden', service: 'Resort Outdoor Living', story: 'A screened pool and bare lawn reborn as a resort courtyard — coral-stone terrace, washed-oak pergola, zellige outdoor kitchen, Shady Lady olives and bougainvillea.' },
+    ].map((p, i) => {
+      const k = i + 1, v = pos[i] ?? 50;
+      const setFrom = e => { const r = e.currentTarget.getBoundingClientRect(); this.setState(s => ({ pos: { ...(s.pos || {}), [i]: Math.max(0, Math.min(100, ((e.clientX - r.left) / r.width) * 100)) } })); };
+      return { ...p, n: '0' + k, beforeId: `v5-p${k}-before`, afterId: `v5-p${k}-after`,
+        beforePh: `PROMPT P${k}-A · BEFORE`, afterPh: `PROMPT P${k}-B · AFTER`,
+        clip: `inset(0 0 0 ${v}%)`, left: v + '%',
+        down: e => { this.dragging = i; e.currentTarget.setPointerCapture(e.pointerId); setFrom(e); },
+        move: e => { if (this.dragging === i) setFrom(e); },
+        up: () => { this.dragging = null; },
+        details: ['C','D','E'].map(x => ({ id: `v5-p${k}-${x.toLowerCase()}`, ph: `PROMPT P${k}-${x} · DETAIL` })) };
+    });
+    const a = this.state.active;
+    const cr = {"1653972233499-eaad56990299":["dada design","dada_design"],"1696986681436-f5ee12981bc9":["Clay Banks","claybanks"],"1558442074-3c19857bc1dc":["iD INTERIORS","idinteriors"],"1720161263981-84281892ee4b":["Pepita Martasya","pepitamartasya"],"1737898378296-94dc316cd443":["Prydumano Design","prydumanodesign"],"1568115286680-d203e08a8be6":["Moritz Bruder","moritzbruder"]};
+    return {
+      heroRef: this.heroRef,
+      projects, pr0: projects[0], pr1: projects[1], pr2: projects[2],
+      services: raw.map(([title, body, img, tg], i) => ({
+        id: 'v4-s' + (i + 1), credit: 'Photo by ' + cr[img][0] + ' on Unsplash', creditHref: 'https://unsplash.com/@' + cr[img][1], n: '0' + (i + 1), title, body, img: u(img), ph: 'PROMPT S' + (i + 1) + ' · ' + title, tags: tg, imgOrder: i % 2 ? 2 : 1, textOrder: i % 2 ? 1 : 2,
+        on: a === i, color: a === i ? '#1A1A1A' : '#8F8676',
+        opacity: a === i ? 1 : 0, pe: a === i ? 'auto' : 'none',
+        pick: () => this.state.active !== i && this.setState({ active: i }),
+      })),
+      steps: [
+        { n: '01', title: 'Consultation', body: 'We walk the home and your goals, and talk honestly about scope and budget.' },
+        { n: '02', title: 'Design', body: 'Plans, 3D and selections — agreed before a single wall moves.' },
+        { n: '03', title: 'Build', body: 'Permitting and construction managed end to end, with regular updates.' },
+        { n: '04', title: 'Handover', body: 'Finished, detailed and walked through together — ready to live in.' },
+      ],
+      sent: this.state.sent, notSent: !this.state.sent,
+      submit: e => { e.preventDefault(); this.setState({ sent: true }); },
+    };
+  }
+}
+</script>
+</body>
+</html>

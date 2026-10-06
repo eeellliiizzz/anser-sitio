@@ -1,5 +1,5 @@
 {
-  "_nota": "Fuente única de proyectos. Solo datos verificados: no añadir clientes, cifras ni fechas sin confirmar. Campos vacíos = dato no confirmado. 'areas' alimenta el filtro. 'portada' e 'imagenes' son nombres de archivo dentro de img/proyectos/; si 'imagenes' está vacío, la web busca <slug>-1.jpg, <slug>-2.jpg, etc. Opcionales: 'entregables' (lista «Qué hicimos»), 'formato': 'vertical' (reels y stories en tres columnas). 'imagenes' admite también .mp4. 'cliente': 'Confidencial' para trabajos de marketing e IA (nunca el nombre real). 'tipo': 'Caso tipo' = ejemplo ilustrativo, no un encargo real. 'nda': true = caso confidencial: etiqueta destacada, sin galería ni imágenes; lleva 'resumen' (visible en la tarjeta) y 'detalle' (al abrirla) en lugar de 'descripcion'. 'resumen' (frase destacada) y 'detalle' (texto o lista de párrafos) son opcionales en cualquier proyecto. Un .html en 'imagenes' es una pieza animada y se muestra viva dentro de un marco 16:10. En un elemento de 'imagenes', \"ancha\": true fuerza el ancho completo aunque la imagen sea vertical. Los proyectos sin material o a la espera no van aquí: están en borradores/proyectos-pendientes.json (esa carpeta no se publica).",
+  "_nota": "Fuente única de proyectos. Solo datos verificados: no añadir clientes, cifras ni fechas sin confirmar. Campos vacíos = dato no confirmado. 'areas' alimenta el filtro. 'portada' e 'imagenes' son nombres de archivo dentro de img/proyectos/; si 'imagenes' está vacío, la web busca <slug>-1.jpg, <slug>-2.jpg, etc. Opcionales: 'entregables' (lista «Qué hicimos»), 'formato': 'vertical' (reels y stories en tres columnas). 'imagenes' admite también .mp4. 'cliente': 'Confidencial' para trabajos de marketing e IA (nunca el nombre real). 'tipo': 'Caso tipo' = ejemplo ilustrativo, no un encargo real. 'nda': true = caso confidencial: etiqueta destacada, sin galería ni imágenes; lleva 'resumen' (visible en la tarjeta) y 'detalle' (al abrirla) en lugar de 'descripcion'. 'resumen' (frase destacada) y 'detalle' (texto o lista de párrafos) son opcionales en cualquier proyecto. Un .html en 'imagenes' es una pieza animada y se muestra viva dentro de un marco 16:10. En un elemento de 'imagenes', \"ancha\": true fuerza el ancho completo aunque la imagen sea vertical. Los proyectos sin material o a la espera no van aquí: están en borradores/proyectos-pendientes.json (esa carpeta no se publica). \"web\": true en un elemento de 'imagenes' muestra una página real navegable dentro de un marco.",
   "proyectos": [
     {
       "slug": "naturgy",
@@ -368,29 +368,26 @@
       "entregables": [
         "Diseño web",
         "Desarrollo",
+        "Comparador de antes y después",
         "SEO",
         "GEO (posicionamiento en asistentes de IA)"
       ],
       "portada": "hesperia-portada.webp",
       "imagenes": [
         {
-          "src": "hesperia-1.webp",
-          "pie": "Portada.",
-          "ancha": true
+          "src": "hesperia-web/index.html",
+          "web": true,
+          "url": "Hesperia Design & Build",
+          "pie": "La web, navegable: se puede recorrer entera y arrastrar los antes y después."
         },
         {
           "src": "hesperia-2.webp",
-          "pie": "Presentación del estudio.",
+          "pie": "Proyectos con antes y después.",
           "ancha": true
         },
         {
-          "src": "hesperia-3.webp",
-          "pie": "Proceso de trabajo.",
-          "ancha": true
-        },
-        {
-          "src": "hesperia-4.webp",
-          "pie": "Pie de página.",
+          "src": "hesperia-1.webp",
+          "pie": "Servicios.",
           "ancha": true
         }
       ]
