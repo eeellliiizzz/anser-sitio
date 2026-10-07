@@ -393,6 +393,35 @@
       ]
     },
     {
+      "slug": "vivian-borroto",
+      "titulo": "Dra. Vivian Borroto",
+      "tipo": "Diseño web, SEO y GEO",
+      "lugar": "Valencia",
+      "anio": "2026",
+      "via": "",
+      "areas": [
+        "Web"
+      ],
+      "descripcion": "Web profesional para una doctora y consultora en ozonoterapia y medicina integrativa: presentación, trayectoria y una biblioteca de publicaciones con buscador, en español y en inglés.",
+      "entregables": [
+        "Diseño web",
+        "Desarrollo",
+        "Versión en inglés",
+        "Biblioteca de publicaciones con filtros",
+        "SEO",
+        "GEO (posicionamiento en asistentes de IA)"
+      ],
+      "portada": "vivian-borroto-portada.webp",
+      "imagenes": [
+        {
+          "src": "vivian-borroto-web/index.html",
+          "web": true,
+          "url": "Dra. Vivian Borroto Rodríguez",
+          "pie": "La web, navegable: tres páginas, dos idiomas y un buscador de publicaciones."
+        }
+      ]
+    },
+    {
       "slug": "chat-clinicas",
       "titulo": "Citas y reseñas para clínicas",
       "tipo": "Asistente con IA",

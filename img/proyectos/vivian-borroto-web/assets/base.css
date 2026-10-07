@@ -1,0 +1,60 @@
+/* Base de la página. El diseño va en línea, dentro de fuente/web.dc.html. */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #FBFCFD; }
+
+/* Copia estática (buscadores y navegación sin JavaScript): enlaces a todas las páginas */
+#estatico .rutas { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; padding: 1rem 28px 2rem; max-width: 1160px; margin: 0 auto; font: 14px/1.5 'Schibsted Grotesk', system-ui, sans-serif; }
+#estatico .rutas a { color: #3D6E9E; }
+
+:focus-visible { outline: 2px solid #3D6E9E; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Cabecera. Las clases vb-* las añade herramientas/genera.py sobre el diseño. */
+.vb-tabs { display: flex; align-items: center; gap: 6px; }
+
+/* Tableta y móvil (hasta 1000 px): las pestañas bajan a una barra fija inferior;
+   arriba quedan nombre, idioma y Contactar.
+   Los !important son necesarios porque el diseño lleva los estilos en línea. */
+@media (max-width: 1000px) {
+  .vb-raiz { padding-bottom: calc(68px + env(safe-area-inset-bottom)); }
+  /* sin desenfoque: con él, la barra inferior quedaría anclada a la cabecera y no a la pantalla */
+  .vb-cab { background: #FBFCFD !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+  .vb-cab-in { flex-wrap: nowrap !important; }
+  .vb-marca { min-width: 0; }
+  .vb-sep { display: none !important; }
+  .vb-nav { flex-wrap: nowrap !important; gap: 8px !important; flex: none; }
+  .vb-tabs {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    background: rgba(251, 252, 253, 0.96); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border-top: 1px solid #E6EBF0;
+  }
+  .vb-tab { white-space: nowrap; }
+  /* Portada: texto y retrato siguen lado a lado mientras quepan */
+  .vb-portada { gap: 32px 40px !important; padding-top: 64px !important; padding-bottom: 64px !important; }
+  .vb-portada-texto { flex-basis: 400px !important; }
+}
+
+/* Móvil (hasta 760 px) */
+@media (max-width: 760px) {
+  .vb-cab-in { padding: 10px 16px !important; gap: 10px !important; }
+  .vb-marca { gap: 10px !important; }
+  .vb-mono { width: 38px !important; height: 38px !important; font-size: 15px !important; flex: none; }
+  .vb-nombre { font-size: 15px !important; line-height: 1.15; }
+  .vb-lema { display: none !important; }
+  .vb-idioma { min-width: 34px !important; min-height: 32px !important; font-size: 12px !important; }
+  .vb-contacto { min-height: 40px !important; padding: 0 16px !important; font-size: 15px !important; }
+  .vb-tab { min-height: 46px !important; padding: 0 4px !important; font-size: 15px !important; }
+
+  /* Portada: el retrato, pequeño y sobre el texto */
+  .vb-portada { padding: 40px 20px 56px !important; gap: 22px !important; }
+  .vb-foto-caja { flex: 0 0 100% !important; }
+  .vb-foto { max-width: 96px !important; border-radius: 16px !important; }
+}
+@media (max-width: 400px) {
+  .vb-mono { display: none !important; }  /* en pantallas estrechas, el nombre solo: así cabe en dos líneas */
+  .vb-nombre { font-size: 14px !important; }
+  .vb-contacto { padding: 0 13px !important; }
+  .vb-tab { font-size: 14px !important; }
+}
