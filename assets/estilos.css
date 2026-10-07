@@ -299,3 +299,21 @@ a.canal[href]:hover .canal__flecha { transform: translateX(.25em); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ---------- Página legal (legal/ y en/legal/) ---------- */
+
+.nav--legal { display: flex !important; }
+.legal { max-width: 46rem; padding: calc(var(--cab) + clamp(2rem, 6vw, 5rem)) var(--margen) clamp(3rem, 8vw, 6rem); }
+.legal__fecha { color: var(--tenue); margin-bottom: 1rem; }
+.legal h1 { font-size: clamp(2.2rem, 5vw, 4rem); letter-spacing: -.045em; }
+.legal__nota { color: var(--tenue); margin-top: 1rem; font-size: .95rem; }
+.legal section { margin-top: clamp(2.5rem, 6vw, 4.5rem); border-top: 1px solid var(--tinta); padding-top: 1.2rem; }
+.legal h2 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
+.legal h3 { font-size: 1.1rem; letter-spacing: -.02em; line-height: 1.2; margin-top: 2rem; }
+.legal p, .legal__lista { margin-top: .7rem; max-width: 62ch; }
+.legal a { text-decoration: underline; text-underline-offset: .18em; }
+.legal a:hover { color: var(--azul); }
+.legal__lista { list-style: disc; padding-left: 1.2rem; display: grid; gap: .5rem; }
+.legal__datos { display: grid; grid-template-columns: max-content 1fr; gap: .5rem 1.5rem; margin: 1rem 0 0; }
+.legal__datos dt { color: var(--tenue); padding-top: .2rem; }
+.legal__datos dd { margin: 0; overflow-wrap: anywhere; }
