@@ -147,6 +147,7 @@ function preguntas() {
   if (matchMedia('(prefers-reduced-motion: reduce)').matches || T.preguntas.length < 2) return;
   let i = 0;
   setInterval(() => {
+    if (document.hidden || el.matches(':hover')) return;
     el.classList.add('sale');
     setTimeout(() => {
       i = (i + 1) % T.preguntas.length;

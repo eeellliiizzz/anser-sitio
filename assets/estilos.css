@@ -44,6 +44,9 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 ::selection { background: var(--azul); color: #fff; }
 :focus-visible { outline: 2px solid var(--azul); outline-offset: 3px; }
 
+/* Respuesta al toque: sin retardo de doble pulsación ni destello gris al pulsar */
+a, button { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+
 .skip { position: absolute; left: -999px; top: 0; background: var(--azul); color: #fff; padding: .6rem 1rem; z-index: 100; }
 .skip:focus { left: 0; }
 
@@ -186,7 +189,7 @@ article.pieza h3 { font-size: inherit; }
   .pieza:hover .pieza__titulo { background-size: 100% 1px; }
 }
 
-.ficha { border: 0; padding: 0; margin: 0; width: 100vw; height: 100dvh; max-width: none; max-height: none; background: var(--papel); color: var(--tinta); overflow-y: auto; }
+.ficha { border: 0; padding: 0; margin: 0; width: 100vw; height: 100dvh; max-width: none; max-height: none; background: var(--papel); color: var(--tinta); overflow-y: auto; overscroll-behavior: contain; }
 .ficha::backdrop { background: var(--papel); }
 .ficha__barra { position: sticky; top: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; height: var(--cab); padding-inline: var(--margen); background: color-mix(in srgb, var(--papel) 88%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 .ficha__nav { display: flex; align-items: center; gap: 1.2rem; }
@@ -317,3 +320,8 @@ a.canal[href]:hover .canal__flecha { transform: translateX(.25em); }
 .legal__datos { display: grid; grid-template-columns: max-content 1fr; gap: .5rem 1.5rem; margin: 1rem 0 0; }
 .legal__datos dt { color: var(--tenue); padding-top: .2rem; }
 .legal__datos dd { margin: 0; overflow-wrap: anywhere; }
+
+/* ---------- Pulsación ---------- */
+/* Los botones ceden un poco al pulsarlos: confirma el toque antes de que pase nada más */
+.boton, .flotante { transition-property: background, opacity, transform; }
+.boton:active, .flotante:active { transform: scale(.97); transition-duration: .12s; }
