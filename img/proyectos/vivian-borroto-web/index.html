@@ -266,13 +266,9 @@ input,select,button{font-family:inherit}
       <p style="margin:0;font-size:15px;line-height:1.55;color:#46525C;max-width:48ch">{{ t.addr }}</p>
     </div>
     <div style="flex:1 1 380px;display:flex;flex-direction:column;gap:12px">
-      <a href="{{ waLink }}" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:72px;padding:0 26px;border-radius:16px;background:#3D6E9E;color:#FFFFFF;text-decoration:none" style-hover="background:#2F5A84;color:#FFFFFF;text-decoration:none">
-        <span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;font-weight:600;color:#DCE7F2">WhatsApp</span><span style="font-size:20px;font-weight:600">+34 688 60 82 71</span></span>
+      <a href="{{ mailLink }}" style="display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:72px;padding:0 26px;border-radius:16px;background:#3D6E9E;color:#FFFFFF;text-decoration:none" style-hover="background:#2F5A84;color:#FFFFFF;text-decoration:none">
+        <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:13px;font-weight:600;color:#DCE7F2">{{ t.mailLabel }}</span><span style="font-size:18px;font-weight:600;overflow-wrap:anywhere">{{ mail }}</span></span>
         <span style="font-size:20px">→</span>
-      </a>
-      <a href="mailto:dra.vivianborroto@gmail.com" style="display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:72px;padding:0 26px;border-radius:16px;background:#FFFFFF;border:1px solid #DCE4EC;color:#1F2933;text-decoration:none" style-hover="border-color:#3D6E9E;color:#1F2933;text-decoration:none">
-        <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:13px;font-weight:600;color:#3D6E9E">Email</span><span style="font-size:18px;font-weight:600;overflow-wrap:anywhere">dra.vivianborroto@gmail.com</span></span>
-        <span style="font-size:20px;color:#3D6E9E">→</span>
       </a>
     </div>
   </div>
@@ -307,7 +303,7 @@ class Component extends DCLogic {
       ownBooks: 'Libros propios', docsTitle: 'Documentos', searchPh: 'Buscar por título, revista o coautor', topicLabel: 'Tema', periodLabel: 'Periodo',
       allTopics: 'Todos los temas', allYears: 'Todos los años', clearFilters: 'Quitar filtros', noPubs: 'No hay documentos que coincidan con su búsqueda.',
       open: 'Abrir', offline: 'Referencia impresa · sin versión en línea',
-      ctTitle: 'Hablemos de su proyecto.', ctLead: 'Escriba por WhatsApp o correo electrónico. La Dra. Borroto responde personalmente.',
+      ctTitle: 'Hablemos de su proyecto.', ctLead: 'Escriba por correo electrónico. La Dra. Borroto responde personalmente.', mailLabel: 'Correo electrónico', legal: 'Aviso legal y privacidad',
       wa: 'Hola, Dra. Borroto. Me gustaría hacerle una consulta.'
     },
     en: {
@@ -320,7 +316,7 @@ class Component extends DCLogic {
       ownBooks: 'Own books', docsTitle: 'Documents', searchPh: 'Search by title, journal or co-author', topicLabel: 'Topic', periodLabel: 'Period',
       allTopics: 'All topics', allYears: 'All years', clearFilters: 'Clear filters', noPubs: 'No documents match your search.',
       open: 'Open', offline: 'Print reference · no online version',
-      ctTitle: "Let's talk about your project.", ctLead: 'Write via WhatsApp or email. Dr. Borroto replies personally.',
+      ctTitle: "Let's talk about your project.", ctLead: 'Write by email. Dr. Borroto replies personally.', mailLabel: 'Email', legal: 'Legal notice and privacy',
       wa: 'Hello Dr. Borroto, I would like to get in touch.'
     }
   };
@@ -461,7 +457,7 @@ class Component extends DCLogic {
     return {
       t, go, heroPhoto, heroNoPhoto: !heroPhoto, toContact: this.toContact, contactRef: this.contactRef,
       isInicio: s.view === 'inicio', isTrayectoria: s.view === 'trayectoria', isBiblioteca: s.view === 'biblioteca',
-      waLink: `https://wa.me/34688608271?text=${encodeURIComponent(t.wa)}`,
+      mail: atob('ZHJhLnZpdmlhbmJvcnJvdG9AZ21haWwuY29t'), mailLink: 'mailto:' + atob('ZHJhLnZpdmlhbmJvcnJvdG9AZ21haWwuY29t'), legalHref: s.lang === 'es' ? '/legal/' : '/en/legal/',
       nav: views.map(([v, label]) => { const on = s.view === v; return { label, onClick: go[v], current: on ? 'page' : undefined, weight: on ? 600 : 500, bg: on ? '#EEF3F8' : 'transparent', color: on ? '#2F5A84' : '#46525C' }; }),
       langs: ['es', 'en'].map(l => ({ label: l.toUpperCase(), bg: s.lang === l ? '#EEF3F8' : 'transparent', fg: s.lang === l ? '#2F5A84' : '#6B7680', onClick: () => this.setState({ lang: l }) })),
       services: d.services, stats: d.stats, profile: d.profile, affiliations: d.affiliations, books: d.books,
