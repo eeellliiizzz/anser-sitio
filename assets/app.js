@@ -118,7 +118,8 @@ function pintaContacto() {
     flotante.rel = 'noopener';
   }
   if ('IntersectionObserver' in window) {
-    new IntersectionObserver(([e]) => flotante.classList.toggle('oculto', e.isIntersecting)).observe($('#contacto'));
+    // al llegar al contacto se esconde, y deja de ser alcanzable con el teclado (no se enfoca un botón invisible)
+    new IntersectionObserver(([e]) => { flotante.classList.toggle('oculto', e.isIntersecting); flotante.tabIndex = e.isIntersecting ? -1 : 0; }).observe($('#contacto'));
   }
 }
 
