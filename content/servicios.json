@@ -1,8 +1,9 @@
 {
-  "_nota": "Fuente única de servicios. Para añadir un área, copia un bloque y cambia los textos: la web la pinta y la numera sola. El orden de la lista es el orden en la web.",
+  "_nota": "Fuente única de servicios. Para añadir un área, copia un bloque y cambia los textos: la web la pinta y la numera sola. El orden de la lista es el orden en la web. 'pagina' enlaza el servicio con su página propia (por idioma; sin clave, sin enlace).",
   "servicios": [
     {
       "titulo": "Marca, diseño gráfico y web",
+      "pagina": {"es": "/marca-diseno-y-web/"},
       "frase": "Identidades que se reconocen, piezas que se entienden a la primera y páginas web que funcionan.",
       "capacidades": [
         "Branding",
@@ -15,6 +16,7 @@
     },
     {
       "titulo": "Espacios y eventos",
+      "pagina": {"es": "/espacios-y-eventos/"},
       "frase": "Diseñamos el espacio y lo enseñamos en 3D antes de que se construya.",
       "capacidades": [
         "Diseño de espacios",
@@ -53,6 +55,7 @@
     },
     {
       "titulo": "Agentes y chats con IA",
+      "pagina": {"es": "/agentes-y-chats-con-ia/"},
       "frase": "Asistentes que responden a vuestros clientes con la voz de la marca.",
       "capacidades": [
         "Agentes de IA",

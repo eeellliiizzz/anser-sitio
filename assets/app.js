@@ -19,7 +19,7 @@ const CONFIG = {
   email: 'info@anser.studio',
   whatsapp: '34747441171',  // provisional; solo dígitos con prefijo
   // Imágenes de proyecto (ver img/proyectos/LEEME.txt)
-  dirImagenes: 'img/proyectos/',
+  dirImagenes: '/img/proyectos/',
   extensiones: ['jpg', 'webp', 'png', 'jpeg', 'mp4'],
   maxImagenes: 12,
 };
@@ -30,7 +30,7 @@ const EN = document.documentElement.lang === 'en';
 const T = EN ? {
   menu: 'Menu', cerrar: 'Close', todos: 'All', tipo: 'Type', cliente: 'Client', lugar: 'Location', anio: 'Year', via: 'Via',
   viaPref: 'via ', hecho: 'What we did', pendImg: '[PENDING] Images', pendProy: '[PENDING] Project images',
-  webNav: 'Live website', piezaAlt: 'piece', nda: 'Confidential case', clienteMeta: (c) => `${c} client`,
+  webNav: 'Live website', piezaAlt: 'piece', casoCompleto: 'See the full project', nda: 'Confidential case', clienteMeta: (c) => `${c} client`,
   errServ: 'Services could not be loaded.', errProy: 'Projects could not be loaded.',
   preguntas: [
     'Who designs the brand and the stand too?',
@@ -43,7 +43,7 @@ const T = EN ? {
 } : {
   menu: 'Menú', cerrar: 'Cerrar', todos: 'Todos', tipo: 'Tipo', cliente: 'Cliente', lugar: 'Lugar', anio: 'Año', via: 'Vía',
   viaPref: 'vía ', hecho: 'Qué hicimos', pendImg: '[PENDIENTE] Imágenes', pendProy: '[PENDIENTE] Imágenes del proyecto',
-  webNav: 'Web navegable', piezaAlt: 'pieza', nda: 'Caso confidencial', clienteMeta: (c) => `Cliente ${c.toLowerCase()}`,
+  webNav: 'Web navegable', piezaAlt: 'pieza', casoCompleto: 'Ver el proyecto completo', nda: 'Caso confidencial', clienteMeta: (c) => `Cliente ${c.toLowerCase()}`,
   errServ: 'No se han podido cargar los servicios.',
   errProy: 'No se han podido cargar los proyectos. Abre la web desde un servidor (no con doble clic sobre el archivo).',
   preguntas: CONFIG.preguntas,
@@ -55,6 +55,12 @@ const tr = (x) => (Array.isArray(x) ? x.map(tr) : (EN && typeof x === 'string' &
 
 const $ = (sel, raiz = document) => raiz.querySelector(sel);
 const $$ = (sel, raiz = document) => [...raiz.querySelectorAll(sel)];
+
+// Página propia de un servicio o un proyecto en el idioma actual ("pagina" en el JSON); sin ella, sin enlace
+const paginaDe = (x) => x.pagina?.[EN ? 'en' : 'es'];
+const conEnlace = (texto, ruta) => (ruta
+  ? [crea('a', { href: ruta }, [texto, ' ', crea('span', { class: 'flecha', 'aria-hidden': 'true', text: '→' })])]
+  : [texto]);
 
 function crea(etiqueta, attrs = {}, hijos = []) {
   const el = document.createElement(etiqueta);
@@ -74,7 +80,7 @@ async function carga(ruta) {
 }
 
 const traducciones = EN
-  ? carga('content/en.json').then((d) => { textosEn = d.textos || {}; }).catch((err) => console.error(err))
+  ? carga('/content/en.json').then((d) => { textosEn = d.textos || {}; }).catch((err) => console.error(err))
   : Promise.resolve();
 
 // Devuelve el proyecto con sus textos en el idioma de la página
@@ -93,7 +99,7 @@ function traduce(p) {
 function pintaMarca() {
   $$('[data-marca]').forEach((el) => { el.textContent = CONFIG.nombre; });
   if (CONFIG.nombre !== 'Anser') document.title = document.title.replaceAll('Anser', CONFIG.nombre);
-  $('#anio').textContent = new Date().getFullYear();
+  if ($('#anio')) $('#anio').textContent = new Date().getFullYear();
 }
 
 function pintaContacto() {
@@ -163,10 +169,10 @@ function preguntas() {
 async function servicios() {
   const lista = $('#servicios-lista');
   try {
-    const [{ servicios: areas }] = await Promise.all([carga('content/servicios.json'), traducciones]);
+    const [{ servicios: areas }] = await Promise.all([carga('/content/servicios.json'), traducciones]);
     lista.replaceChildren(...areas.map((s, i) => crea('li', { class: 'servicio' }, [
       crea('span', { class: 'mono servicio__num', text: String(i + 1).padStart(2, '0') }),
-      crea('h3', { text: tr(s.titulo) }),
+      crea('h3', {}, conEnlace(tr(s.titulo), paginaDe(s))),
       crea('div', { class: 'servicio__txt' }, [
         crea('p', { text: tr(s.frase) }),
         crea('ul', { class: 'mono' }, tr(s.capacidades || []).map((c) => crea('li', { text: c }))),
@@ -315,6 +321,7 @@ async function abreFicha(i) {
         crea('p', { text: T.hecho }),
         crea('ul', {}, p.entregables.map((e) => crea('li', { text: e }))),
       ])] : []),
+      ...(paginaDe(p) ? [crea('p', { class: 'caso__mas' }, [crea('a', { href: paginaDe(p), text: `${T.casoCompleto} →` })])] : []),
     ]),
     ...(p.nda ? [] : [crea('div', { class: `ficha__imgs ${p.formato === 'vertical' ? 'ficha__imgs--vertical' : ''}` }, imgs.length
       ? imgs.map((i, k) => pieza(i, i.pie || `${p.titulo} — ${T.piezaAlt} ${k + 1}`, k > 0))
@@ -342,7 +349,7 @@ function iniciaFicha() {
 async function proyectos() {
   const galeria = $('#galeria');
   try {
-    const [{ proyectos: todos }] = await Promise.all([carga('content/proyectos.json'), traducciones]);
+    const [{ proyectos: todos }] = await Promise.all([carga('/content/proyectos.json'), traducciones]);
     const lista = todos.filter((p) => !p.oculto).map(traduce);
     estado.todos = lista;
     galeria.replaceChildren(...lista.map(pintaPieza));
@@ -363,10 +370,11 @@ async function proyectos() {
 
 /* ---------- Arranque ---------- */
 
+// La home tiene todo; las páginas de servicio y de caso, solo cabecera, contacto y pie
 pintaMarca();
 pintaContacto();
 menu();
-preguntas();
-iniciaFicha();
-servicios();
-proyectos();
+if ($('#pregunta')) preguntas();
+if ($('#ficha')) iniciaFicha();
+if ($('#servicios-lista')) servicios();
+if ($('#galeria') && $('#ficha')) proyectos();

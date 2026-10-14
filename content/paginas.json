@@ -1,0 +1,165 @@
+{
+  "_nota": "Páginas propias de cada servicio. Las escribe herramientas/genera.py (no se editan a mano). 'servicio' es el título exacto en servicios.json; 'areas' son las áreas de proyectos.json cuyos proyectos salen en la página. Las preguntas frecuentes se ven en la página y van también en los datos estructurados. 'nota_proyectos' sustituye a la nota de la galería (por defecto, la de «vía»).",
+  "servicios": [
+    {
+      "ruta": "/espacios-y-eventos/",
+      "servicio": "Espacios y eventos",
+      "areas": [
+        "Espacios y eventos"
+      ],
+      "titulo": "Diseño de stands, espacios y eventos en Madrid y toda España | Anser",
+      "descripcion": "Diseñamos stands, activaciones e intervenciones de marca y eventos corporativos, y los enseñamos en render 3D antes de construirlos. Base en Madrid, proyectos en toda España.",
+      "p": "¿Diseñáis espacios y eventos?",
+      "r": "Sí. Y los enseñamos en 3D antes de que se construyan.",
+      "nota": "Stands, activaciones, intervenciones de marca y eventos corporativos para agencias y marcas. Base en Madrid. Proyectos en toda España.",
+      "capacidades": [
+        [
+          "Diseño de espacios",
+          "El espacio entero pensado alrededor de la marca: recorrido, luz, materiales y gráfica."
+        ],
+        [
+          "Stands",
+          "Stands de líneas limpias e iluminación precisa, pensados para atraer en segundos en ferias saturadas."
+        ],
+        [
+          "Intervenciones de marca",
+          "Elementos que llevan la marca a un local sin invadir su identidad ni alterar su atmósfera."
+        ],
+        [
+          "Arquitectura efímera",
+          "Escenografías y estructuras para eventos y activaciones, en interior y al aire libre."
+        ],
+        [
+          "Renders 3D",
+          "Representación 3D para que vuestro cliente vea el espacio y lo apruebe antes de fabricar nada."
+        ]
+      ],
+      "r_proyectos": "Algunos espacios.",
+      "agencias": true,
+      "preguntas": [
+        [
+          "¿Trabajáis para agencias de eventos?",
+          "Sí. Somos su producción creativa externa: diseñamos el espacio y la gráfica del evento con un solo interlocutor y una sola línea creativa. Cuando el encargo llega a través de una agencia, en nuestros proyectos lo indicamos con «vía»."
+        ],
+        [
+          "¿Se puede ver el espacio antes de construirlo?",
+          "Sí. Lo enseñamos en render 3D para que lo aprobéis, vosotros o vuestro cliente, antes de fabricar nada."
+        ],
+        [
+          "¿También hacéis la gráfica del evento?",
+          "Sí. La gráfica y el espacio del mismo evento salen de la misma mesa: del concepto al espacio."
+        ],
+        [
+          "¿Dónde trabajáis?",
+          "Tenemos la base en Madrid y hacemos proyectos en toda España: entre otros sitios, en Madrid, Barcelona y Valencia."
+        ]
+      ]
+    },
+    {
+      "ruta": "/marca-diseno-y-web/",
+      "servicio": "Marca, diseño gráfico y web",
+      "areas": [
+        "Marca y diseño gráfico",
+        "Web"
+      ],
+      "titulo": "Branding, diseño gráfico y diseño web en Madrid | Anser",
+      "descripcion": "Identidad visual, diseño gráfico, packaging, gráfica de evento y páginas web, con un único interlocutor. Estudio creativo con base en Madrid y proyectos en toda España.",
+      "p": "¿Quién nos hace la marca y la web?",
+      "r": "Nosotros, con la misma línea de principio a fin.",
+      "nota": "Identidades que se reconocen, piezas que se entienden a la primera y páginas web que funcionan. Base en Madrid. Proyectos en toda España.",
+      "capacidades": [
+        [
+          "Branding",
+          "La idea de la marca y cómo se presenta, antes de dibujar nada."
+        ],
+        [
+          "Identidad visual",
+          "Logotipo, color, tipografía y las reglas para usarlos."
+        ],
+        [
+          "Diseño gráfico",
+          "Piezas impresas y digitales que se entienden a la primera."
+        ],
+        [
+          "Páginas web",
+          "Webs claras y rápidas, preparadas para que las lean los buscadores y los asistentes de IA."
+        ],
+        [
+          "Packaging",
+          "Envases y etiquetas con la misma identidad que el resto de la marca."
+        ],
+        [
+          "Gráfica de evento",
+          "Señalética, merchandising y todo lo que se ve en el evento, con la misma línea que el espacio."
+        ]
+      ],
+      "r_proyectos": "Algunas marcas y webs.",
+      "agencias": false,
+      "preguntas": [
+        [
+          "¿Hacéis la web además de la marca?",
+          "Sí. Diseñamos y programamos la web con la misma línea que la identidad, para que todo se reconozca como una sola marca."
+        ],
+        [
+          "¿Vuestras webs están preparadas para Google y los asistentes de IA?",
+          "Las preparamos para que se lean bien: contenido visible sin depender de JavaScript, datos estructurados y textos claros. No prometemos posiciones: mejoramos las señales que usan buscadores y asistentes."
+        ],
+        [
+          "¿Trabajáis con agencias y consultoras de marca?",
+          "Sí. Muchas nos contratan como su producción creativa externa, con un solo interlocutor para todo el proyecto."
+        ],
+        [
+          "¿Dónde trabajáis?",
+          "Tenemos la base en Madrid y hacemos proyectos en toda España. También fuera: por ejemplo, la web de un estudio de diseño y construcción del sur de Florida."
+        ]
+      ]
+    },
+    {
+      "ruta": "/agentes-y-chats-con-ia/",
+      "servicio": "Agentes y chats con IA",
+      "areas": [
+        "Agentes y chats con IA"
+      ],
+      "titulo": "Agentes de IA y chatbots con la voz de vuestra marca | Anser",
+      "descripcion": "Diseñamos asistentes con IA que atienden por chat con la voz de la marca: reservan citas sobre la agenda real y recogen opiniones. Base en Madrid, proyectos en toda España.",
+      "p": "¿Y un asistente con IA que atienda a nuestros clientes?",
+      "r": "Sí. Con la voz de vuestra marca.",
+      "nota": "Asistentes por chat que responden, reservan y hacen seguimiento. Base en Madrid. Proyectos en toda España.",
+      "capacidades": [
+        [
+          "Agentes de IA",
+          "Asistentes que hacen tareas, no solo responden: reservar una cita, cambiarla o pedir una opinión después de la visita."
+        ],
+        [
+          "Chatbots",
+          "Atención por chat que responde a vuestros clientes con la voz de la marca."
+        ],
+        [
+          "Diseño de conversación",
+          "Qué dice el asistente, cómo lo dice y en qué orden, para que la conversación llegue a algo."
+        ]
+      ],
+      "r_proyectos": "Un ejemplo.",
+      "nota_proyectos": "En este servicio los clientes son confidenciales: enseñamos lo que hace el asistente, sin nombre, lugar ni cifras.",
+      "agencias": false,
+      "preguntas": [
+        [
+          "¿Qué puede hacer un asistente con IA por nuestro negocio?",
+          "Atender por chat con la voz de la marca y hacer tareas concretas. Por ejemplo, en una clínica reserva citas sobre la agenda real, gestiona cambios y cancelaciones y, tras la visita, recoge la opinión del paciente."
+        ],
+        [
+          "¿Se conecta con nuestra agenda?",
+          "En el caso de las clínicas, sí: el asistente trabaja sobre la agenda real y los horarios del equipo. Cada integración depende de las herramientas que uséis, así que lo vemos con vosotros."
+        ],
+        [
+          "¿Por qué no enseñáis el nombre de vuestros clientes?",
+          "Porque en este servicio son confidenciales. Enseñamos lo que hace el asistente, sin nombre, lugar ni cifras del cliente."
+        ],
+        [
+          "¿Dónde trabajáis?",
+          "Tenemos la base en Madrid y hacemos proyectos en toda España."
+        ]
+      ]
+    }
+  ]
+}

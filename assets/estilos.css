@@ -145,13 +145,16 @@ article.pieza h3 { font-size: inherit; }
   padding-block: clamp(1.2rem, 2.4vw, 2rem); border-bottom: 1px solid var(--raya);
 }
 .servicio__num { color: var(--tenue); transition: color .3s; }
-.servicio h3 { font-size: clamp(1.7rem, 3.5vw, 3.3rem); padding-right: 1.5rem; transition: transform .5s var(--curva), color .3s; }
+.servicio h3, .servicio h2 { font-size: clamp(1.7rem, 3.5vw, 3.3rem); padding-right: 1.5rem; transition: transform .5s var(--curva), color .3s; }
 .servicio__txt p { max-width: 36ch; margin-bottom: .8rem; }
 .servicio__txt ul { display: flex; flex-wrap: wrap; gap: .2rem 0; color: var(--tenue); }
 .servicio__txt li:not(:last-child)::after { content: "/"; margin-inline: .6em; opacity: .5; }
+/* Solo invitan a pulsar las filas que llevan a algún sitio (las que tienen página propia); toda la fila es el enlace */
+.servicio:has(h3 a) { position: relative; }
+.servicio h3 a::after { content: ""; position: absolute; inset: 0; }
 @media (hover: hover) {
-  .servicio:hover h3 { transform: translateX(.35em); color: var(--azul); }
-  .servicio:hover .servicio__num { color: var(--azul); }
+  .servicio:has(h3 a):hover h3 { transform: translateX(.35em); color: var(--azul); }
+  .servicio:has(h3 a):hover .servicio__num { color: var(--azul); }
 }
 
 .integral { display: grid; grid-template-columns: var(--sigla) minmax(0, 1fr); align-items: baseline; margin-top: clamp(2rem, 4vw, 3.5rem); font-size: clamp(1.25rem, 2.3vw, 2.1rem); letter-spacing: -.025em; line-height: 1.15; }
@@ -198,7 +201,7 @@ article.pieza h3 { font-size: inherit; }
 .ficha__barra > button { margin-left: -.4rem; }
 .ficha__cuerpo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: clamp(1.5rem, 4vw, 4rem); padding: clamp(1rem, 3vw, 2.5rem) var(--margen) clamp(3rem, 6vw, 5rem); align-items: start; }
 .ficha__txt { position: sticky; top: calc(var(--cab) + 1rem); display: grid; gap: 1.2rem; }
-.ficha__txt h2 { font-size: clamp(2rem, 3.6vw, 3.4rem); letter-spacing: -.045em; text-wrap: balance; }
+.ficha__txt h2, .ficha__txt h1 { font-size: clamp(2rem, 3.6vw, 3.4rem); letter-spacing: -.045em; text-wrap: balance; }
 .ficha__txt p { max-width: 38ch; }
 .ficha__txt dl { display: grid; grid-template-columns: 5rem minmax(0, 1fr); gap: .35rem 0; margin: 0; padding-top: 1rem; border-top: 1px solid var(--raya); }
 .ficha__txt dt { color: var(--tenue); }
@@ -320,6 +323,31 @@ a.canal[href]:hover .canal__flecha { transform: translateX(.25em); }
 .legal__datos { display: grid; grid-template-columns: max-content 1fr; gap: .5rem 1.5rem; margin: 1rem 0 0; }
 .legal__datos dt { color: var(--tenue); padding-top: .2rem; }
 .legal__datos dd { margin: 0; overflow-wrap: anywhere; }
+
+/* ---------- Páginas de servicio y de caso (las escribe herramientas/genera.py) ---------- */
+
+.pagina__cab { padding-top: calc(var(--cab) + clamp(2rem, 6vw, 5rem)); }
+.migas { display: flex; flex-wrap: wrap; gap: .5em; color: var(--tenue); margin: 0 0 clamp(1.5rem, 3vw, 2.5rem) var(--sigla); }
+.migas a { transition: color .3s; }
+.migas a:hover { color: var(--azul); }
+.flecha { color: var(--azul); font-size: .6em; vertical-align: .3em; transition: transform .4s var(--curva); display: inline-block; }
+a:hover > .flecha { transform: translateX(.2em); }
+
+.faq { border-top: 1px solid var(--tinta); }
+.faq > li {
+  display: grid; grid-template-columns: var(--sigla) minmax(0, 1fr); align-items: baseline; gap: .7rem 0;
+  padding-block: clamp(1.2rem, 2.4vw, 2rem); border-bottom: 1px solid var(--raya);
+}
+.faq h3 { font-size: clamp(1.3rem, 2.2vw, 2rem); letter-spacing: -.03em; line-height: 1.1; text-wrap: balance; }
+.faq p { max-width: 60ch; color: var(--tenue); }
+
+.caso { padding-top: var(--cab); }
+.caso .migas { margin: 0; }
+.caso h1 { font-weight: 500; line-height: 1; }
+.caso__autoria { color: var(--tenue); margin-top: -.6rem; }
+.caso .ficha__txt dl, .caso .ficha__hecho { grid-template-columns: 7.5rem minmax(0, 1fr); }  /* cabe «Cliente final» */
+.caso__mas a, .ficha .caso__mas a { color: var(--azul); border-bottom: 1px solid currentColor; }
+.caso__mas a:hover { border-bottom-width: 2px; }
 
 /* ---------- Pulsación ---------- */
 /* Los botones ceden un poco al pulsarlos: confirma el toque antes de que pase nada más */

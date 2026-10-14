@@ -3,6 +3,7 @@
   "proyectos": [
     {
       "slug": "naturgy",
+      "entregables": ["Diseño del espacio", "Renders 3D"],
       "titulo": "Naturgy",
       "tipo": "Evento corporativo",
       "lugar": "Valencia",
@@ -23,6 +24,7 @@
     },
     {
       "slug": "sunglass-hut",
+      "entregables": ["Diseño del espacio", "Renders 3D"],
       "titulo": "Sunglass Hut Summer Event",
       "tipo": "Evento de marca",
       "lugar": "Barcelona",
@@ -42,6 +44,7 @@
     },
     {
       "slug": "the-ordinary",
+      "entregables": ["Diseño del espacio", "Renders 3D"],
       "titulo": "The Ordinary",
       "tipo": "Activación de marca",
       "lugar": "",
