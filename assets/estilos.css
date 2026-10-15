@@ -152,9 +152,13 @@ article.pieza h3 { font-size: inherit; }
 /* Solo invitan a pulsar las filas que llevan a algún sitio (las que tienen página propia); toda la fila es el enlace */
 .servicio:has(h3 a) { position: relative; }
 .servicio h3 a::after { content: ""; position: absolute; inset: 0; }
+/* Flecha al final de la fila, como en los canales de contacto: el título nunca crece por ella */
+.servicio__flecha { position: absolute; right: 0; top: clamp(1.2rem, 2.4vw, 2rem); font-size: clamp(1.3rem, 2.4vw, 2.2rem); line-height: 1.3; transition: transform .5s var(--curva), color .3s; }
+.servicio:has(h3 a) .servicio__txt, .servicio:has(h3 a) h3 { padding-right: clamp(2.2rem, 4vw, 3.5rem); }  /* hueco para la flecha */
 @media (hover: hover) {
   .servicio:has(h3 a):hover h3 { transform: translateX(.35em); color: var(--azul); }
-  .servicio:has(h3 a):hover .servicio__num { color: var(--azul); }
+  .servicio:has(h3 a):hover .servicio__num, .servicio:has(h3 a):hover .servicio__flecha { color: var(--azul); }
+  .servicio:has(h3 a):hover .servicio__flecha { transform: translateX(.25em); }
 }
 
 .integral { display: grid; grid-template-columns: var(--sigla) minmax(0, 1fr); align-items: baseline; margin-top: clamp(2rem, 4vw, 3.5rem); font-size: clamp(1.25rem, 2.3vw, 2.1rem); letter-spacing: -.025em; line-height: 1.15; }

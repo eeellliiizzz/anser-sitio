@@ -58,9 +58,9 @@ const $$ = (sel, raiz = document) => [...raiz.querySelectorAll(sel)];
 
 // Página propia de un servicio o un proyecto en el idioma actual ("pagina" en el JSON); sin ella, sin enlace
 const paginaDe = (x) => x.pagina?.[EN ? 'en' : 'es'];
-const conEnlace = (texto, ruta) => (ruta
-  ? [crea('a', { href: ruta }, [texto, ' ', crea('span', { class: 'flecha', 'aria-hidden': 'true', text: '→' })])]
-  : [texto]);
+const conEnlace = (texto, ruta) => (ruta ? [crea('a', { href: ruta, text: texto })] : [texto]);
+// Flecha al final de la fila de un servicio con página (fuera del título, para que no lo alargue)
+const flechaServicio = (ruta) => (ruta ? [crea('span', { class: 'servicio__flecha', 'aria-hidden': 'true', text: '→' })] : []);
 
 function crea(etiqueta, attrs = {}, hijos = []) {
   const el = document.createElement(etiqueta);
@@ -177,6 +177,7 @@ async function servicios() {
         crea('p', { text: tr(s.frase) }),
         crea('ul', { class: 'mono' }, tr(s.capacidades || []).map((c) => crea('li', { text: c }))),
       ]),
+      ...flechaServicio(paginaDe(s)),
     ])));
   } catch (err) {
     console.error(err);
